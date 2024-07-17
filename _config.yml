@@ -17,8 +17,8 @@ title: "Hello. I'm Shekhar."
 email: 'shekharnarayanan833@gmail.com'
 description: "My main expertise lies in data science, with substantial experience in developing analysis pipelines for neural data. Currently, I am working as a research software engineer and data steward at Tilburg University, Netherlands."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://jamigibbs.github.io/phantom" # the base hostname & protocol for your site, e.g. https://example.com
-github_username: 'jamigibbs'
+url: "https://ShekharNarayanan.github.io/phantom" # the base hostname & protocol for your site, e.g. https://example.com
+github_username: 'ShekharNarayanan'
 medium_username: 'blog.jamigibbs.com'
 
 # Build settings
@@ -93,7 +93,7 @@ pagination:
 ### Phantom settings
 footer_text: '© 2024 Shekhar Narayanan'
 admin_name: 'Shekhar Narayanan'
-google_analytics: "UA-9999999-99" # Update with your own tracking ID
+# google_analytics: "UA-9999999-99" # Update with your own tracking ID
 enable_contact: false
 
 #### Phantom Navigation menu
