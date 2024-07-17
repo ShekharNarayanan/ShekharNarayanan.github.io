@@ -15,11 +15,11 @@
 # in the templates via {{ site.myvariable }}.
 title: "Hello. I'm Shekhar."
 email: 'shekharnarayanan833@gmail.com'
-description: "My main expertise lies in data science, with substantial experience in developing analysis pipelines for neural data. Currently, I am working as a research software engineer and data steward at Tilburg University, Netherlands."
+description: "My main expertise lies in developing end to end data analysis pipelines. Currently, I am working as a research software engineer and data steward at Tilburg University, Netherlands."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ShekharNarayanan.github.io/phantom" # the base hostname & protocol for your site, e.g. https://example.com
 github_username: 'ShekharNarayanan'
-medium_username: 'blog.jamigibbs.com'
+linkedin_username: 'https://www.linkedin.com/in/shekharnarayanan/'
 
 # Build settings
 markdown: kramdown
