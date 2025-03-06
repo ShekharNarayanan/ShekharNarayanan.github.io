@@ -50,15 +50,18 @@
   
   /* Hero Section with background */
   .hero-section {
+    /* Use min-height, so it can grow only if content requires */
+    min-height: 40vh; /* or 45vh, etc. */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 50vh;
-    background: url("img/hero-bg.jfif") no-repeat center center/cover;
+    background: url("img/hero-bg.jpg") no-repeat center center/cover; 
     position: relative;
     color: #fff;
+    /* Remove any existing height property if it's 90vh or 60vh. */
   }
+  
   
   /* Dark overlay behind hero content for better text contrast */
   .hero-section::before {
@@ -77,8 +80,8 @@
   }
   
   .profile-pic {
-    width: 225px;
-    height: 225px;
+    width: 500px;
+    height: 500px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #fff;
