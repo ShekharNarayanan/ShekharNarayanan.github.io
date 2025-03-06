@@ -11,6 +11,7 @@
   <nav class="navbar">
     <div class="nav-brand">Shekhar Narayanan</div>
     <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
       <li><a href="#profile">Profile</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
@@ -20,15 +21,18 @@
     </ul>
   </nav>
 
-  <!-- Header Section -->
-  <header class="hero-section">
-    <h1>Hello, I'm Shekhar!</h1>
-    <p>Building solutions that tell stories through data and make life easier with reliable software.</p>
-    <button onclick="scrollToSection('contact')" class="hero-btn">Get in Touch</button>
+  <!-- Hero Section with Background & Profile Pic -->
+  <header id="hero" class="hero-section">
+    <div class="hero-content">
+      <img src="img/profile.jfif" alt="Profile" class="profile-pic"/>
+      <h1>Hello, I'm Shekhar!</h1>
+      <p>Building solutions that tell stories through data and make life easier with reliable software.</p>
+      <button onclick="scrollToSection('contact')" class="hero-btn">Get in Touch</button>
+    </div>
   </header>
 
   <!-- Profile Section -->
-  <section id="profile" class="section">
+  <section id="profile" class="section fade-in-on-scroll">
     <h2>Profile</h2>
     <p>
       With over 4 years of experience building end-to-end solutions for scientists worldwide, 
@@ -39,25 +43,25 @@
   </section>
 
   <!-- Professional Experience Section -->
-  <section id="experience" class="section">
+  <section id="experience" class="section fade-in-on-scroll">
     <h2>Professional Experience</h2>
     <div class="experience-entry">
       <h3>Software Engineer | Data Steward</h3>
       <h4>Tilburg University, Netherlands (Sept 2024 – Present)</h4>
       <ul>
         <li>Worked on multiple API integration projects (OpenAI, REST APIs, YouTube Search).</li>
-        <li>Employed NLP techniques (TF-IDF, cosine similarity) with scikit-learn.</li>
-        <li>Gave workshops on code quality, version control, and data wrangling in R.</li>
-        <li>Developed Python applications to simplify workflows.</li>
+        <li>Employed NLP techniques (TF-IDF, cosine similarity) using scikit-learn.</li>
+        <li>Hosted workshops on code quality, version control, and data wrangling in R.</li>
+        <li>Developed Python apps to simplify workflows.</li>
       </ul>
     </div>
     <div class="experience-entry">
       <h3>Project Lead</h3>
       <h4>Data-Driven Neurotech Lab, Donders Institute (Oct 2023 – Jul 2024)</h4>
       <ul>
-        <li>Developed full-stack software for a neuroscientific experiment (UI + back end) in Python.</li>
+        <li>Developed full-stack software for neuroscientific experiments (UI + back-end) in Python.</li>
         <li>Performed preprocessing, feature extraction, and classification (LDA, CCA).</li>
-        <li>Used scikit-learn for grid-search optimization, model evaluation, ML pipelines.</li>
+        <li>Used scikit-learn for grid-search optimization, model evaluation, and ML pipelines.</li>
       </ul>
     </div>
     <div class="experience-entry">
@@ -72,7 +76,7 @@
   </section>
 
   <!-- Education Section -->
-  <section id="education" class="section">
+  <section id="education" class="section fade-in-on-scroll">
     <h2>Education</h2>
     <div class="education-entry">
       <h3>Radboud University, Nijmegen, Netherlands</h3>
@@ -85,7 +89,7 @@
   </section>
 
   <!-- Technical Skills Section -->
-  <section id="skills" class="section">
+  <section id="skills" class="section fade-in-on-scroll">
     <h2>Technical Skills</h2>
     <ul class="skills-list">
       <li><strong>Programming:</strong> Python, MATLAB, R, SQL</li>
@@ -97,7 +101,7 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="section">
+  <section id="projects" class="section fade-in-on-scroll">
     <h2>Highlighted Projects</h2>
     <div class="project-grid">
       <!-- 1) Finance Viz -->
@@ -132,7 +136,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section contact-section">
+  <section id="contact" class="section contact-section fade-in-on-scroll">
     <h2>Get in Touch</h2>
     <p>
       Email: <a href="mailto:shekharnarayanan833@gmail.com">shekharnarayanan833@gmail.com</a><br/>
