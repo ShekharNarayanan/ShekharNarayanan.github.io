@@ -54,7 +54,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 90vh;
+    height: 50vh;
     background: url("img/hero-bg.jfif") no-repeat center center/cover;
     position: relative;
     color: #fff;
@@ -77,8 +77,8 @@
   }
   
   .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 225px;
+    height: 225px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #fff;
