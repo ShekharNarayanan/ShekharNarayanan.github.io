@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shekhar Narayanan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-brand">Shekhar Narayanan</div>
+    <ul class="nav-links">
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="hero-section">
+    <h1>Hello, I'm Shekhar!</h1>
+    <p>Building solutions that tell stories through data and make life easier with reliable software.</p>
+    <button onclick="scrollToSection('contact')" class="hero-btn">Get in Touch</button>
+  </header>
+
+  <!-- Profile Section -->
+  <section id="profile" class="section">
+    <h2>Profile</h2>
+    <p>
+      With over 4 years of experience building end-to-end solutions for scientists worldwide, 
+      I thrive in telling stories through data and developing reliable software. 
+      I love communicating progress with both technical and non-technical audiences 
+      and am ready to make a positive impact at the intersection of data and software.
+    </p>
+  </section>
+
+  <!-- Professional Experience Section -->
+  <section id="experience" class="section">
+    <h2>Professional Experience</h2>
+    <div class="experience-entry">
+      <h3>Software Engineer | Data Steward</h3>
+      <h4>Tilburg University, Netherlands (Sept 2024 – Present)</h4>
+      <ul>
+        <li>Worked on multiple API integration projects (OpenAI, REST APIs, YouTube Search).</li>
+        <li>Employed NLP techniques (TF-IDF, cosine similarity) with scikit-learn.</li>
+        <li>Gave workshops on code quality, version control, and data wrangling in R.</li>
+        <li>Developed Python applications to simplify workflows.</li>
+      </ul>
+    </div>
+    <div class="experience-entry">
+      <h3>Project Lead</h3>
+      <h4>Data-Driven Neurotech Lab, Donders Institute (Oct 2023 – Jul 2024)</h4>
+      <ul>
+        <li>Developed full-stack software for a neuroscientific experiment (UI + back end) in Python.</li>
+        <li>Performed preprocessing, feature extraction, and classification (LDA, CCA).</li>
+        <li>Used scikit-learn for grid-search optimization, model evaluation, ML pipelines.</li>
+      </ul>
+    </div>
+    <div class="experience-entry">
+      <h3>Research Data Scientist</h3>
+      <h4>Genzel Lab, Donders Institute (Sep 2021 – Jul 2023)</h4>
+      <ul>
+        <li>Automated ETL workflows for large datasets, improving efficiency by ~97.5%.</li>
+        <li>Performed feature engineering to boost classification accuracy for neural cell data.</li>
+        <li>Implemented data visualization methods in MATLAB, leading to a publication.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <div class="education-entry">
+      <h3>Radboud University, Nijmegen, Netherlands</h3>
+      <p>M.Sc. Natural Computing and Neurotechnology (2021 – 2023), GPA: 7.98</p>
+    </div>
+    <div class="education-entry">
+      <h3>Manipal Institute of Technology, Manipal, India</h3>
+      <p>B.Tech Electronics and Communication Engineering (2016 – 2020), GPA: 7.38</p>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills" class="section">
+    <h2>Technical Skills</h2>
+    <ul class="skills-list">
+      <li><strong>Programming:</strong> Python, MATLAB, R, SQL</li>
+      <li><strong>Machine Learning:</strong> scikit-learn, TensorFlow</li>
+      <li><strong>Data Manipulation:</strong> pandas, NumPy</li>
+      <li><strong>Visualization:</strong> matplotlib, seaborn</li>
+      <li><strong>Miscellaneous:</strong> Git, GitHub, CI/CD, AWS, API Integration, Web Scraping</li>
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>Highlighted Projects</h2>
+    <div class="project-grid">
+      <!-- 1) Finance Viz -->
+      <div class="project-card">
+        <h3>Finance_Viz</h3>
+        <p>Python, Feature Engineering, NLP, PyQt5</p>
+        <p>Application for visualizing and tracking monthly finances.</p>
+        <a href="https://github.com/ShekharNarayanan/finance_viz" target="_blank" class="project-link">View on GitHub</a>
+      </div>
+      <!-- 2) AI for Medical Diagnosis -->
+      <div class="project-card">
+        <h3>AI for Medical Diagnosis</h3>
+        <p>Deep Learning, Convolutional Neural Networks</p>
+        <p>Implemented UNET for medical imaging tasks.</p>
+        <a href="https://github.com/ShekharNarayanan/AI_for_medical_diagnosis_coursera" target="_blank" class="project-link">View on GitHub</a>
+      </div>
+      <!-- 3) Web Scraping -->
+      <div class="project-card">
+        <h3>Web Scraping</h3>
+        <p>Python, Scrapy</p>
+        <p>Extracted and processed HTML data from websites using Scrapy and XPath.</p>
+        <a href="https://github.com/ShekharNarayanan/web_scraping" target="_blank" class="project-link">View on GitHub</a>
+      </div>
+      <!-- 4) Python Intermediate Inflammation -->
+      <div class="project-card">
+        <h3>Python Intermediate Inflammation</h3>
+        <p>Python, Data Analysis, Testing</p>
+        <p>Workshop materials showcasing intermediate Python skills and best practices.</p>
+        <a href="https://github.com/ShekharNarayanan/python-intermediate-inflammation" target="_blank" class="project-link">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <h2>Get in Touch</h2>
+    <p>
+      Email: <a href="mailto:shekharnarayanan833@gmail.com">shekharnarayanan833@gmail.com</a><br/>
+      GitHub: <a href="https://github.com/ShekharNarayanan" target="_blank">github.com/ShekharNarayanan</a><br/>
+      LinkedIn: <a href="https://www.linkedin.com/in/shekharnarayanan" target="_blank">linkedin.com/in/shekharnarayanan</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 | Made with <span class="heart">♥</span> by Shekhar</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
