@@ -21,14 +21,22 @@
     </ul>
   </nav>
 
-  <!-- Hero Section with Background & Profile Pic -->
+  <!-- Hero Section with Background -->
   <header id="hero" class="hero-section">
+    <!-- Text container -->
     <div class="hero-content">
-      <img src="img/profile.jfif" alt="Profile" class="profile-pic"/>
       <h1>Hello, I'm Shekhar!</h1>
-      <p>Building solutions that tell stories through data and make life easier with reliable software.</p>
-      <button onclick="scrollToSection('contact')" class="hero-btn">Get in Touch</button>
+      <h3>Building solutions that tell stories through data and make life easier with reliable software.</h3>
+
+      <!-- Social links in the hero area -->
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/shekharnarayanan" target="_blank">LinkedIn</a>
+        <a href="https://github.com/ShekharNarayanan" target="_blank">GitHub</a>
+      </div>
     </div>
+
+    <!-- Profile picture placed OUTSIDE .hero-content, so it moves independently -->
+    <img src="img/profile.jfif" alt="Profile" class="profile-pic"/>
   </header>
 
   <!-- Profile Section -->
@@ -104,28 +112,24 @@
   <section id="projects" class="section fade-in-on-scroll">
     <h2>Highlighted Projects</h2>
     <div class="project-grid">
-      <!-- 1) Finance Viz -->
       <div class="project-card">
         <h3>Finance_Viz</h3>
         <p>Python, Feature Engineering, NLP, PyQt5</p>
         <p>Application for visualizing and tracking monthly finances.</p>
         <a href="https://github.com/ShekharNarayanan/finance_viz" target="_blank" class="project-link">View on GitHub</a>
       </div>
-      <!-- 2) AI for Medical Diagnosis -->
       <div class="project-card">
         <h3>AI for Medical Diagnosis</h3>
         <p>Deep Learning, Convolutional Neural Networks</p>
         <p>Implemented UNET for medical imaging tasks.</p>
         <a href="https://github.com/ShekharNarayanan/AI_for_medical_diagnosis_coursera" target="_blank" class="project-link">View on GitHub</a>
       </div>
-      <!-- 3) Web Scraping -->
       <div class="project-card">
         <h3>Web Scraping</h3>
         <p>Python, Scrapy</p>
         <p>Extracted and processed HTML data from websites using Scrapy and XPath.</p>
         <a href="https://github.com/ShekharNarayanan/web_scraping" target="_blank" class="project-link">View on GitHub</a>
       </div>
-      <!-- 4) Python Intermediate Inflammation -->
       <div class="project-card">
         <h3>Python Intermediate Inflammation</h3>
         <p>Python, Data Analysis, Testing</p>

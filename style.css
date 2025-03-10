@@ -1,237 +1,273 @@
-/* Overall Layout and Defaults */
+/* ------------------------------------------------------------------------
+   Overall Layout and Defaults
+------------------------------------------------------------------------ */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  body {
-    background-color: #fdfdfd;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 1rem 5%;
-    border-bottom: 2px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
-  
-  .nav-brand {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #333;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #0099cc;
-  }
-  
-  /* Hero Section with background */
-  .hero-section {
-    /* Use min-height, so it can grow only if content requires */
-    min-height: 40vh; /* or 45vh, etc. */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: url("img/hero-bg.jpg") no-repeat center center/cover; 
-    position: relative;
-    color: #fff;
-    /* Remove any existing height property if it's 90vh or 60vh. */
-  }
-  
-  
-  /* Dark overlay behind hero content for better text contrast */
-  .hero-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.45);
-    z-index: 1;
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 700px;
-    margin: 0 2rem;
-  }
-  
-  .profile-pic {
-    width: 500px;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-section p {
-    font-size: 1.15rem;
-    margin-bottom: 2rem;
-  }
-  
-  .hero-btn {
-    background-color: #0099cc;
-    color: #fff;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    border-radius: 25px;
-  }
-  
-  .hero-btn:hover {
-    background-color: #007ca3;
-  }
-  
-  /* Sections */
-  .section {
-    padding: 3rem 5%;
-    max-width: 1100px;
-    margin: auto;
-    color: #333;
-  }
-  
-  .section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #0099cc;
-    position: relative;
-  }
-  
-  /* Fade-in on scroll elements */
-  .fade-in-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  
-  /* The class that triggers the fade-in effect */
-  .visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* Experience/Education */
-  .experience-entry, .education-entry {
-    margin-bottom: 1.5rem;
-  }
-  
-  .experience-entry h3, .education-entry h3 {
-    font-size: 1.2rem;
-    color: #444;
-    margin-bottom: 0.5rem;
-  }
-  
-  .experience-entry h4, .education-entry p {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-  }
-  
-  .experience-entry ul {
-    list-style: disc;
-    margin-left: 1.2rem;
-    color: #555;
-  }
-  
-  /* Skills */
-  .skills-list {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .skills-list li {
-    margin-bottom: 0.8rem;
-  }
-  
-  /* Projects */
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 2rem;
-  }
-  
-  .project-card {
-    border: 1px solid #eee;
-    border-radius: 4px;
-    padding: 1.5rem;
-    background-color: #fff;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
-  
-  .project-card:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-4px);
-  }
-  
-  .project-card h3 {
-    margin-bottom: 0.5rem;
-    color: #0099cc;
-  }
-  
-  .project-link {
-    display: inline-block;
-    margin-top: 1rem;
-    text-decoration: none;
-    font-weight: bold;
-    color: #0099cc;
-  }
-  
-  .project-link:hover {
-    color: #007ca3;
-  }
-  
-  /* Contact */
-  .contact-section {
-    background-color: #fafafa;
-    text-align: center;
-  }
-  
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 1rem 2rem;
-    background-color: #fff;
-    border-top: 2px solid #eee;
-    margin-top: 2rem;
-  }
-  
-  .footer p {
-    color: #555;
-    font-size: 0.95rem;
-  }
-  
-  .heart {
-    color: red;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fff7f2;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------------------------------
+   Navbar
+------------------------------------------------------------------------ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem 5%;
+  border-bottom: 2px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #FF6F3C;
+}
+
+/* ------------------------------------------------------------------------
+   Hero Section with Background
+------------------------------------------------------------------------ */
+.hero-section {
+  min-height: 85vh;
+  position: relative;
+  display: flex;        /* optional for advanced positioning if needed */
+  align-items: center;  /* vertically center content by default */
+  justify-content: center; /* horizontally center text by default */
+  text-align: center;
+  background: url("img/hero-bg.jfif") no-repeat center bottom/cover;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.05); /* very light overlay */
+  z-index: 1;
+}
+
+/* ------------------------------------------------------------------------
+   Hero Content (Text & Links)
+   - This container is for <h1>, <h3>, .hero-links
+   - We can nudge it up or down with margin-top
+------------------------------------------------------------------------ */
+.hero-content {
+  position: relative;
+  z-index: 3;        /* above overlay */
+  max-width: 600px;
+  margin: -2rem auto 0 auto; /* negative top margin => text moves up */
+  text-align: center;
+}
+
+/* Headings */
+.hero-content h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+  margin-bottom: 1rem;
+}
+
+.hero-content h3 {
+  font-size: 1.25rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* ------------------------------------------------------------------------
+   Profile Pic
+   - Moved outside .hero-content in HTML so you can control them independently
+------------------------------------------------------------------------ */
+.profile-pic {
+  position: absolute;
+  bottom: 0;      /* or 1rem, if you want some gap from the bottom */
+  right: 8rem;    /* how far from the right edge */
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  z-index: 3;    /* above overlay */
+}
+
+/* ------------------------------------------------------------------------
+   Hero Links (LinkedIn, GitHub)
+------------------------------------------------------------------------ */
+.hero-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-links a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #FF6F3C;
+  padding: 0.75rem 1.2rem;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-links a:hover {
+  background-color: #FF5F2C;
+}
+
+/* ------------------------------------------------------------------------
+   Sections
+------------------------------------------------------------------------ */
+.section {
+  padding: 3rem 5%;
+  max-width: 1100px;
+  margin: auto;
+  color: #333;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #FF6F3C;
+}
+
+/* Fade-in on Scroll Elements */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Experience & Education Entries */
+.experience-entry,
+.education-entry {
+  margin-bottom: 1.5rem;
+}
+
+.experience-entry h3,
+.education-entry h3 {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.experience-entry h4,
+.education-entry p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.experience-entry ul {
+  list-style: disc;
+  margin-left: 1.2rem;
+  color: #555;
+}
+
+/* Skills */
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li {
+  margin-bottom: 0.8rem;
+}
+
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 1.5rem;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  color: #FF6F3C;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: #FF6F3C;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #FF5F2C;
+}
+
+/* Contact */
+.contact-section {
+  background-color: #fafafa;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-top: 2px solid #eee;
+  margin-top: 2rem;
+}
+
+.footer p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.heart {
+  color: red;
+}
