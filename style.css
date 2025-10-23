@@ -22,7 +22,7 @@ body {
 /* HERO */
 .hero {
   position: relative;
-  min-height: 76vh;
+  min-height: 70vh;
   display: grid;
   place-items: center;
   text-align: center;
@@ -61,12 +61,12 @@ background-blend-mode: overlay, normal;
 
 .hero-wave {
   position: absolute;
-  bottom: -1px; left: 0; right: 0;
+  bottom: -10px; left: 0; right: 0;
   width: 100%; height: auto; fill: var(--bg);
 }
 
 /* Sections */
-.projects { padding: 15px 20px 36px; }
+.projects { padding: 25px 20px 36px; }
 .section-head { max-width: 1100px; margin: 0 auto 12px; padding: 0 20px; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .projects h2 {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
