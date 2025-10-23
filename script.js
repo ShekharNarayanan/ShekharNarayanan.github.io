@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+  
+  // Dynamically assign background images to project cards
+document.querySelectorAll('.card').forEach(card => {
+  const image = card.dataset.image; // grab the data-image attribute
+  if (image) {
+    const thumb = card.querySelector('.thumb');
+    thumb.style.backgroundImage = `url('${image}')`;
+    thumb.style.backgroundSize = 'cover';
+    thumb.style.backgroundPosition = 'center';
+    thumb.style.backgroundRepeat = 'no-repeat';
+  }
+});
+
   // ------- Work Projects: arrow behavior -------
   document.querySelectorAll('.carousel:not(.no-arrows)').forEach(carousel => {
     const track = carousel.querySelector('.track');
