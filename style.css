@@ -28,7 +28,7 @@ body {
   text-align: center;
   color: var(--text);
   background:
-  url('/pattern.svg') center/900px repeat,
+  url('/media/hero_bg.svg') center/900px repeat,
   linear-gradient(160deg, var(--primary) 0%, var(--secondary) 100%);
 background-blend-mode: overlay, normal;
 
