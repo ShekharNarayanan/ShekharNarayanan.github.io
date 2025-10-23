@@ -1,160 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shekhar Narayanan</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-brand">Shekhar Narayanan</div>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shekhar Narayanan — Portfolio</title>
 
-  <!-- Hero Section with Background -->
-  <header id="hero" class="hero-section">
-    <!-- Text container -->
-    <div class="hero-content">
-      <h1>Hello, I'm Shekhar!</h1>
-      <h3>Building solutions that tell stories through data and make life easier with reliable software.</h3>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-      <!-- Social links in the hero area -->
-      <div class="hero-links">
-        <a href="https://www.linkedin.com/in/shekharnarayanan" target="_blank">LinkedIn</a>
-        <a href="https://github.com/ShekharNarayanan" target="_blank">GitHub</a>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title">Shekhar Narayanan</h1>
+        <p class="hero-tagline">Engineer. Researcher. Data storyteller.</p>
+        <div class="hero-ctas">
+          <a href="#work-projects" class="btn btn-primary">View Projects</a>
+          <a href="Shekhar_Narayanan_CV.pdf" class="btn btn-accent" target="_blank" download>Download CV</a>
+        </div>
+      </div>
+      <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,64L60,69.3C120,75,240,85,360,80C480,75,600,53,720,48C840,43,960,53,1080,64C1200,75,1320,85,1380,90.7L1440,96L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"></path>
+      </svg>
+    </header>
+
+    <main>
+      <!-- WORK PROJECTS -->
+      <section id="work-projects" class="projects">
+        <div class="section-head">
+          <h2>Work Projects</h2>
+          <p class="section-sub">Selected work from university and research roles</p>
+        </div>
+
+        <div class="carousel">
+          <button class="arrow left" aria-label="Scroll left" data-dir="left">&#8592;</button>
+          <div class="track" tabindex="0">
+            <article class="card"
+              data-title="Companies House API Integration"
+              data-stack="Python · API Integration · Automation"
+              data-desc="Automated data extraction for researchers using the Companies House API to streamline corporate data access for analysis at Tilburg University."
+              data-link="https://gitlab.uvt.nl/tsb-rst/os_companies_house_api_integration">
+              <div class="thumb"></div>
+              <h3>Companies House API Integration</h3>
+              <p class="muted">Automating corporate data pipelines</p>
+            </article>
+
+            <article class="card"
+              data-title="Universal Text Conversion Tool"
+              data-stack="Python · NLP · Data Processing"
+              data-desc="Python tools for text normalization and conversion across languages to support multilingual research workflows."
+              data-link="https://gitlab.uvt.nl/tsb-rst/universal_text_conversion">
+              <div class="thumb"></div>
+              <h3>Universal Text Conversion Tool</h3>
+              <p class="muted">Cross-language text normalization</p>
+            </article>
+
+            <article class="card"
+              data-title="YouTube API Data Extraction"
+              data-stack="Python · API Integration · Data Cleaning"
+              data-desc="Tools to collect and preprocess YouTube data, aiding behavioral and media research at Tilburg University."
+              data-link="https://gitlab.uvt.nl/tsb-rst/youtube_api_data_extraction">
+              <div class="thumb"></div>
+              <h3>YouTube API Data Extraction</h3>
+              <p class="muted">Data pipelines for research</p>
+            </article>
+			
+			<article class="card"
+			  data-title="Covert CVEP Brain–Computer Interface"
+			  data-stack="Python · Psychopy · Machine Learning"
+			  data-desc="Built a brain–computer interface using Psychopy and scikit-learn for neural decoding of EEG data at the Donders Institute."
+			  data-link="https://github.com/ShekharNarayanan/Covert_CVEP">
+			  <div class="thumb"></div>
+			  <h3>Covert CVEP BCI</h3>
+			  <p class="muted">BCI for ALS communication research</p>
+			</article>
+
+			<article class="card"
+			  data-title="Neural Data Analysis (RGS14)"
+			  data-stack="MATLAB · Data Engineering · Visualization"
+			  data-desc="Designed end-to-end pipelines for neural data analysis from rats — feature extraction, visualization, and report generation."
+			  data-link="https://github.com/genzellab/RGS14">
+			  <div class="thumb"></div>
+			  <h3>Neural Data Analysis (RGS14)</h3>
+			  <p class="muted">Neuroscience data pipelines</p>
+			</article>
+
+          </div>
+          <button class="arrow right" aria-label="Scroll right" data-dir="right">&#8594;</button>
+        </div>
+      </section>
+
+      <!-- PASSION PROJECTS -->
+      <section id="passion-projects" class="projects">
+        <div class="section-head">
+          <h2>Passion Projects</h2>
+          <p class="section-sub">Personal builds and experiments</p>
+        </div>
+
+        <div class="carousel no-arrows">
+          <div class="track" tabindex="0">
+            <article class="card"
+              data-title="live_stocks_tracker"
+              data-stack="Python · Streamlit · FastAPI · SQL"
+              data-desc="A web app to track US stock market trends without ads, using Streamlit for the UI and FastAPI for secure backend integration."
+              data-link="https://github.com/ShekharNarayanan/live_stocks_tracker/tree/main">
+              <div class="thumb"></div>
+              <h3>live_stocks_tracker</h3>
+              <p class="muted">Track stocks securely and ad-free</p>
+            </article>
+
+            <article class="card"
+              data-title="finance_viz"
+              data-stack="Python · LangChain · Dash · Plotly"
+              data-desc="Personal finance dashboard using Dash and Plotly for visualizing expenditures. Integrates local LLMs for insight generation."
+              data-link="https://github.com/ShekharNarayanan/finance_viz/tree/develop">
+              <div class="thumb"></div>
+              <h3>finance_viz</h3>
+              <p class="muted">Visualizing expenses with AI</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>Connect with me:</p>
+        <div class="socials">
+          <a href="mailto:shekharnarayanan833@gmail.com">Email</a>
+          <a href="https://github.com/ShekharNarayanan" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/shekharnarayanan" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-card" role="document">
+        <button class="modal-close" aria-label="Close" data-close>&times;</button>
+        <h3 id="modal-title">Title</h3>
+        <p class="modal-stack"></p>
+        <p class="modal-desc"></p>
+        <a class="btn btn-accent modal-link" href="#" target="_blank" rel="noopener">View project</a>
       </div>
     </div>
 
-    <!-- Profile picture placed OUTSIDE .hero-content, so it moves independently -->
-    <img src="img/profile.jfif" alt="Profile" class="profile-pic"/>
-  </header>
-
-  <!-- Profile Section -->
-  <section id="profile" class="section fade-in-on-scroll">
-    <h2>Profile</h2>
-    <p>
-      With over 4 years of experience building end-to-end solutions for scientists worldwide, 
-      I thrive in telling stories through data and developing reliable software. 
-      I love communicating progress with both technical and non-technical audiences 
-      and am ready to make a positive impact at the intersection of data and software.
-    </p>
-  </section>
-
-  <!-- Professional Experience Section -->
-  <section id="experience" class="section fade-in-on-scroll">
-    <h2>Professional Experience</h2>
-    <div class="experience-entry">
-      <h3>Software Engineer | Data Steward</h3>
-      <h4>Tilburg University, Netherlands (Sept 2024 – Present)</h4>
-      <ul>
-        <li>Worked on multiple API integration projects (OpenAI, REST APIs, YouTube Search).</li>
-        <li>Employed NLP techniques (TF-IDF, cosine similarity) using scikit-learn.</li>
-        <li>Hosted workshops on code quality, version control, and data wrangling in R.</li>
-        <li>Developed Python apps to simplify workflows.</li>
-      </ul>
-    </div>
-    <div class="experience-entry">
-      <h3>Project Lead</h3>
-      <h4>Data-Driven Neurotech Lab, Donders Institute (Oct 2023 – Jul 2024)</h4>
-      <ul>
-        <li>Developed full-stack software for neuroscientific experiments (UI + back-end) in Python.</li>
-        <li>Performed preprocessing, feature extraction, and classification (LDA, CCA).</li>
-        <li>Used scikit-learn for grid-search optimization, model evaluation, and ML pipelines.</li>
-      </ul>
-    </div>
-    <div class="experience-entry">
-      <h3>Research Data Scientist</h3>
-      <h4>Genzel Lab, Donders Institute (Sep 2021 – Jul 2023)</h4>
-      <ul>
-        <li>Automated ETL workflows for large datasets, improving efficiency by ~97.5%.</li>
-        <li>Performed feature engineering to boost classification accuracy for neural cell data.</li>
-        <li>Implemented data visualization methods in MATLAB, leading to a publication.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="section fade-in-on-scroll">
-    <h2>Education</h2>
-    <div class="education-entry">
-      <h3>Radboud University, Nijmegen, Netherlands</h3>
-      <p>M.Sc. Natural Computing and Neurotechnology (2021 – 2023), GPA: 7.98</p>
-    </div>
-    <div class="education-entry">
-      <h3>Manipal Institute of Technology, Manipal, India</h3>
-      <p>B.Tech Electronics and Communication Engineering (2016 – 2020), GPA: 7.38</p>
-    </div>
-  </section>
-
-  <!-- Technical Skills Section -->
-  <section id="skills" class="section fade-in-on-scroll">
-    <h2>Technical Skills</h2>
-    <ul class="skills-list">
-      <li><strong>Programming:</strong> Python, MATLAB, R, SQL</li>
-      <li><strong>Machine Learning:</strong> scikit-learn, TensorFlow</li>
-      <li><strong>Data Manipulation:</strong> pandas, NumPy</li>
-      <li><strong>Visualization:</strong> matplotlib, seaborn</li>
-      <li><strong>Miscellaneous:</strong> Git, GitHub, CI/CD, AWS, API Integration, Web Scraping</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="section fade-in-on-scroll">
-    <h2>Highlighted Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Finance_Viz</h3>
-        <p>Python, Feature Engineering, NLP, PyQt5</p>
-        <p>Application for visualizing and tracking monthly finances.</p>
-        <a href="https://github.com/ShekharNarayanan/finance_viz" target="_blank" class="project-link">View on GitHub</a>
-      </div>
-      <div class="project-card">
-        <h3>AI for Medical Diagnosis</h3>
-        <p>Deep Learning, Convolutional Neural Networks</p>
-        <p>Implemented UNET for medical imaging tasks.</p>
-        <a href="https://github.com/ShekharNarayanan/AI_for_medical_diagnosis_coursera" target="_blank" class="project-link">View on GitHub</a>
-      </div>
-      <div class="project-card">
-        <h3>Web Scraping</h3>
-        <p>Python, Scrapy</p>
-        <p>Extracted and processed HTML data from websites using Scrapy and XPath.</p>
-        <a href="https://github.com/ShekharNarayanan/web_scraping" target="_blank" class="project-link">View on GitHub</a>
-      </div>
-      <div class="project-card">
-        <h3>Python Intermediate Inflammation</h3>
-        <p>Python, Data Analysis, Testing</p>
-        <p>Workshop materials showcasing intermediate Python skills and best practices.</p>
-        <a href="https://github.com/ShekharNarayanan/python-intermediate-inflammation" target="_blank" class="project-link">View on GitHub</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section contact-section fade-in-on-scroll">
-    <h2>Get in Touch</h2>
-    <p>
-      Email: <a href="mailto:shekharnarayanan833@gmail.com">shekharnarayanan833@gmail.com</a><br/>
-      GitHub: <a href="https://github.com/ShekharNarayanan" target="_blank">github.com/ShekharNarayanan</a><br/>
-      LinkedIn: <a href="https://www.linkedin.com/in/shekharnarayanan" target="_blank">linkedin.com/in/shekharnarayanan</a>
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 | Made with <span class="heart">♥</span> by Shekhar</p>
-  </footer>
-
-  <!-- Script -->
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
