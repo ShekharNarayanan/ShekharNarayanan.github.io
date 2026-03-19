@@ -1,163 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Shekhar Narayanan — Portfolio</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shekhar Narayanan — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Fira+Code:wght@400;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-logo">SN</div>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#utility">Utility &amp; Dev</a>
+      <a href="#ml-ds">ML &amp; Data Science</a>
+      <a href="#independent">Independent</a>
+      <a href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
+    </div>
+    <button class="theme-toggle" id="theme-toggle">☀ Light</button>
+  </div>
+</nav>
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- HERO -->
-    <header class="hero">
-      <div class="hero-inner">
-        <h1 class="hero-title">Shekhar Narayanan</h1>
-        <p class="hero-tagline">Engineer. Researcher. Data storyteller.</p>
-        <div class="hero-ctas">
-          <a href="#work-projects" class="btn btn-primary">View Projects</a>
-          <a href="Shekhar_Narayanan_CV.pdf" class="btn btn-accent" target="_blank" download>Download CV</a>
-        </div>
-      </div>
-      <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,64L60,69.3C120,75,240,85,360,80C480,75,600,53,720,48C840,43,960,53,1080,64C1200,75,1320,85,1380,90.7L1440,96L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z"></path>
-      </svg>
-    </header>
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <canvas id="neural-bg"></canvas>
 
-    <main>
-      <!-- WORK PROJECTS -->
-      <section id="work-projects" class="projects">
-        <div class="section-head">
-          <h2>Work Projects</h2>
-          <p class="section-sub">Selected work from university and research roles</p>
-        </div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-label">Software Engineer · Utrecht, Netherlands</div>
 
-        <div class="carousel">
-          <button class="arrow left" aria-label="Scroll left" data-dir="left">&#8592;</button>
-          <div class="track" tabindex="0">
-            <article class="card"
-			  data-image = "media/companies_house.png"
-              data-title="Companies House API Integration"
-              data-stack="Python · API Integration · Automation"
-              data-desc="Automated data extraction for researchers using the Companies House API to streamline corporate data access for analysis at Tilburg University."
-              data-link="https://gitlab.uvt.nl/tsb-rst/os_companies_house_api_integration">
-              <div class="thumb"></div>
-              <h3>Companies House API Integration</h3>
-              <p class="muted">Automating corporate data pipelines</p>
-            </article>
+      <h1 class="hero-name">
+        Shekhar<br /><span>Narayanan</span>
+      </h1>
 
-            <article class="card"
-			  data-image = "media/universal_text_conversion.png"
-              data-title="Universal Text Conversion Tool"
-              data-stack="Python · NLP · Data Processing"
-              data-desc="Python tools for text normalization and conversion across languages to support multilingual research workflows."
-              data-link="https://gitlab.uvt.nl/tsb-rst/universal_text_conversion">
-              <div class="thumb"></div>
-              <h3>Universal Text Conversion Tool</h3>
-              <p class="muted">Cross-language text normalization</p>
-            </article>
+      <p class="hero-tagline">
+        Biosignal processing, ML engineering &amp; building tools that get out of your way.
+      </p>
 
-            <article class="card"
-              data-image = "media/youtube.png"
-			  data-title="YouTube API Data Extraction"
-              data-stack="Python · API Integration · Data Cleaning"
-              data-desc="Tools to collect and preprocess YouTube data, aiding behavioral and media research at Tilburg University."
-              data-link="https://gitlab.uvt.nl/tsb-rst/youtube_api_data_extraction">
-              <div class="thumb"></div>
-              <h3>YouTube API Data Extraction</h3>
-              <p class="muted">Data pipelines for research</p>
-            </article>
-			
-			<article class="card"
-			  data-image = "media/CVEP.png"
-			  data-title="Covert CVEP Brain–Computer Interface"
-			  data-stack="Python · Psychopy · Machine Learning"
-			  data-desc="Built a brain–computer interface using Psychopy and scikit-learn for neural decoding of EEG data at the Donders Institute."
-			  data-link="https://github.com/ShekharNarayanan/Covert_CVEP">
-			  <div class="thumb"></div>
-			  <h3>Covert CVEP BCI</h3>
-			  <p class="muted">BCI for ALS communication research</p>
-			</article>
-
-			<article class="card"
-			  data-image = "media/RGS.jpg"
-			  data-title="Neural Data Analysis (RGS14)"
-			  data-stack="MATLAB · Data Engineering · Visualization"
-			  data-desc="Designed end-to-end pipelines for neural data analysis from rats — feature extraction, visualization, and report generation."
-			  data-link="https://github.com/genzellab/RGS14">
-			  <div class="thumb"></div>
-			  <h3>Neural Data Analysis (RGS14)</h3>
-			  <p class="muted">Neuroscience data pipelines</p>
-			</article>
-
-          </div>
-          <button class="arrow right" aria-label="Scroll right" data-dir="right">&#8594;</button>
-        </div>
-      </section>
-
-      <!-- PASSION PROJECTS -->
-      <section id="passion-projects" class="projects">
-        <div class="section-head">
-          <h2>Passion Projects</h2>
-          <p class="section-sub">Personal builds and experiments</p>
-        </div>
-
-        <div class="carousel no-arrows">
-          <div class="track" tabindex="0">
-            <article class="card"
-			  data-image = "media/live_stocks_tracker.PNG"
-              data-title="live_stocks_tracker"
-              data-stack="Python · Streamlit · FastAPI · SQL"
-              data-desc="A web app to track US stock market trends without ads, using Streamlit for the UI and FastAPI for secure backend integration."
-              data-link="https://github.com/ShekharNarayanan/live_stocks_tracker/tree/main">
-              <div class="thumb"></div>
-              <h3>live_stocks_tracker</h3>
-              <p class="muted">Track stocks securely and ad-free</p>
-            </article>
-
-            <article class="card"
-              data-image = "media/finance_viz.png"
-              data-image = "media/companies_house.png"
-			  data-title="finance_viz"
-              data-stack="Python · LangChain · Dash · Plotly"
-              data-desc="Personal finance dashboard using Dash and Plotly for visualizing expenditures. Integrates local LLMs for insight generation."
-              data-link="https://github.com/ShekharNarayanan/finance_viz/tree/develop">
-              <div class="thumb"></div>
-              <h3>finance_viz</h3>
-              <p class="muted">Visualizing expenses with AI</p>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <p>Connect with me:</p>
-        <div class="socials">
-          <a href="mailto:shekharnarayanan833@gmail.com">Email</a>
-          <a href="https://github.com/ShekharNarayanan" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/shekharnarayanan" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-    </footer>
-
-    <!-- MODAL -->
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-      <div class="modal-backdrop" data-close></div>
-      <div class="modal-card" role="document">
-        <button class="modal-close" aria-label="Close" data-close>&times;</button>
-        <h3 id="modal-title">Title</h3>
-        <p class="modal-stack"></p>
-        <p class="modal-desc"></p>
-        <a class="btn btn-accent modal-link" href="#" target="_blank" rel="noopener">View project</a>
+      <div class="hero-pills">
+        <a class="pill" href="#utility">Utility &amp; Dev</a>
+        <a class="pill" href="#ml-ds">ML &amp; Data Science</a>
+        <a class="pill" href="#independent">Independent</a>
       </div>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <div class="hero-image-wrap">
+      <img src="media/hero.jpg" alt="Shekhar Narayanan" class="hero-img" />
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="section-tag reveal">// About</div>
+  <h2 class="reveal">Who I am</h2>
+  <p class="reveal">
+    I'm a software engineer with a background in <strong>neuroscience and biosignal processing</strong>,
+    previously at the Donders Institute developing ALS-focused brain-computer interfaces.
+    Now I build data tools, ML systems and workflow automations — and I'm actively deepening
+    expertise in <strong>ECG arrhythmia detection</strong> as a domain project.
+  </p>
+  <p class="reveal">
+    I'm based in Utrecht and interested in <strong>part-time collaborations</strong> with companies
+    in the wearables and biosensors space — particularly where signal processing, physiological
+    data and machine learning intersect.
+  </p>
+  <div class="about-grid">
+    <div class="about-stat reveal">
+      <div class="about-stat-num">4+</div>
+      <div class="about-stat-label">Years in Biosignal Research</div>
+    </div>
+    <div class="about-stat reveal">
+      <div class="about-stat-num">EEG · ECG · EDA</div>
+      <div class="about-stat-label">Signal Modalities</div>
+    </div>
+    <div class="about-stat reveal">
+      <div class="about-stat-num">ML</div>
+      <div class="about-stat-label">Current Focus</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     UTILITY / SOFTWARE DEVELOPMENT
+     ═══════════════════════════════════════════ -->
+<section id="utility" class="category-section">
+  <div class="category-header reveal">
+    <div class="section-tag">// Utility &amp; Software Development</div>
+    <h2 class="category-title">Utility &amp;<br />Software Dev</h2>
+  </div>
+
+  <!-- ── Universal Text Converter ── -->
+  <div class="project-card reveal">
+    <div class="project-media">
+      <div class="project-num">01</div>
+      <div class="project-viz">
+        <svg class="viz-wave" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <rect width="600" height="300" fill="#060a0d"/>
+
+          <!-- Col 1: .DOCX  .RTF  .TXT -->
+          <g fill="none" stroke="#7aff8a" stroke-width="1.2" opacity="0.65">
+            <rect x="18" y="30"  width="78" height="34" rx="4" opacity="0"><animate attributeName="opacity" from="0" to="0.65" dur="0.4s" begin="0.1s" fill="freeze"/></rect>
+            <rect x="18" y="126" width="78" height="34" rx="4" opacity="0"><animate attributeName="opacity" from="0" to="0.65" dur="0.4s" begin="0.3s" fill="freeze"/></rect>
+            <rect x="18" y="222" width="78" height="34" rx="4" opacity="0"><animate attributeName="opacity" from="0" to="0.65" dur="0.4s" begin="0.5s" fill="freeze"/></rect>
+          </g>
+          <g font-family="monospace" font-size="13" font-weight="700" fill="#7aff8a" text-anchor="middle">
+            <text x="57" y="52"  opacity="0">.DOCX<animate attributeName="opacity" from="0" to="0.9" dur="0.3s" begin="0.15s" fill="freeze"/></text>
+            <text x="57" y="148" opacity="0">.RTF<animate  attributeName="opacity" from="0" to="0.9" dur="0.3s" begin="0.35s" fill="freeze"/></text>
+            <text x="57" y="244" opacity="0">.TXT<animate  attributeName="opacity" from="0" to="0.9" dur="0.3s" begin="0.55s" fill="freeze"/></text>
+          </g>
+
+          <!-- Col 2: .DOC  .ODT  .PDF -->
+          <g fill="none" stroke="#7aff8a" stroke-width="1.2" opacity="0.65">
+            <rect x="108" y="30"  width="78" height="34" rx="4" opacity="0"><animate attributeName="opacity" from="0" to="0.65" dur="0.4s" begin="0.2s" fill="freeze"/></rect>
+            <rect x="108" y="126" width="78" height="34" rx="4" opacity="0"><animate attributeName="opacity" from="0" to="0.65" dur="0.4s" begin="0.4s" fill="freeze"/></rect>
+            <rect x="108" y="222" width="78" height="34" rx="4" opacity="0"><animate attributeName="opacity" from="0" to="0.65" dur="0.4s" begin="0.6s" fill="freeze"/></rect>
+          </g>
+          <g font-family="monospace" font-size="13" font-weight="700" fill="#7aff8a" text-anchor="middle">
+            <text x="147" y="52"  opacity="0">.DOC<animate attributeName="opacity" from="0" to="0.9" dur="0.3s" begin="0.25s" fill="freeze"/></text>
+            <text x="147" y="148" opacity="0">.ODT<animate attributeName="opacity" from="0" to="0.9" dur="0.3s" begin="0.45s" fill="freeze"/></text>
+            <text x="147" y="244" opacity="0">.PDF<animate attributeName="opacity" from="0" to="0.9" dur="0.3s" begin="0.65s" fill="freeze"/></text>
+          </g>
+
+          <!-- One arrow per row → engine -->
+          <polyline points="186,47  211,47  233,126"  fill="none" stroke="#7aff8a" stroke-width="1.2" opacity="0"><animate attributeName="opacity" from="0" to="0.4" dur="0.3s" begin="0.9s" fill="freeze"/></polyline>
+          <polygon  points="227,120 237,126 227,132"  fill="#7aff8a" opacity="0"><animate attributeName="opacity" from="0" to="0.4" dur="0.3s" begin="0.9s" fill="freeze"/></polygon>
+          <line x1="186" y1="143" x2="233" y2="153" stroke="#7aff8a" stroke-width="1.2" opacity="0"><animate attributeName="opacity" from="0" to="0.4" dur="0.3s" begin="1.0s" fill="freeze"/></line>
+          <polygon points="226,148 236,153 226,158"   fill="#7aff8a" opacity="0"><animate attributeName="opacity" from="0" to="0.4" dur="0.3s" begin="1.0s" fill="freeze"/></polygon>
+          <polyline points="186,239  211,239  233,180" fill="none" stroke="#7aff8a" stroke-width="1.2" opacity="0"><animate attributeName="opacity" from="0" to="0.4" dur="0.3s" begin="1.1s" fill="freeze"/></polyline>
+          <polygon  points="227,174 237,180 227,186"   fill="#7aff8a" opacity="0"><animate attributeName="opacity" from="0" to="0.4" dur="0.3s" begin="1.1s" fill="freeze"/></polygon>
+
+          <!-- Engine box -->
+          <rect x="236" y="108" width="118" height="90" rx="6" fill="none" stroke="#7aff8a" stroke-width="1.5" opacity="0"><animate attributeName="opacity" from="0" to="0.75" dur="0.4s" begin="1.3s" fill="freeze"/></rect>
+          <text x="295" y="148" text-anchor="middle" font-family="monospace" font-size="12" font-weight="700" fill="#7aff8a" opacity="0">LibreOffice<animate attributeName="opacity" from="0" to="0.9" dur="0.3s" begin="1.4s" fill="freeze"/></text>
+          <text x="295" y="165" text-anchor="middle" font-family="monospace" font-size="12" font-weight="700" fill="#7aff8a" opacity="0">Engine<animate attributeName="opacity" from="0" to="0.9" dur="0.3s" begin="1.45s" fill="freeze"/></text>
+
+          <!-- Engine → output arrow (plain, no filter) -->
+          <line x1="354" y1="153" x2="425" y2="153" stroke="#7aff8a" stroke-width="3" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.7s" fill="freeze"/></line>
+          <polygon points="423,145  433,153  423,161" fill="#7aff8a" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.75s" fill="freeze"/></polygon>
+
+          <!-- Output box -->
+          <rect x="432" y="115" width="150" height="76" rx="6" fill="none" stroke="#ff7a5a" stroke-width="1.8" opacity="0"><animate attributeName="opacity" from="0" to="0.85" dur="0.4s" begin="1.9s" fill="freeze"/></rect>
+          <text x="507" y="148" text-anchor="middle" font-family="monospace" font-size="14" font-weight="700" fill="#ff7a5a" opacity="0">Unified .PDF<animate attributeName="opacity" from="0" to="0.95" dur="0.3s" begin="2.0s" fill="freeze"/></text>
+          <text x="507" y="174" text-anchor="middle" font-family="monospace" font-size="10" fill="#ff7a5a" opacity="0">Python · LibreOffice<animate attributeName="opacity" from="0" to="0.5" dur="0.3s" begin="2.1s" fill="freeze"/></text>
+        </svg>
+      </div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge"><span class="status-dot"></span> Backend Required</div>
+      <h3 class="project-title">Universal<br />Text Converter</h3>
+      <p class="project-desc">
+        Merges and converts <strong>mixed-format documents</strong> — DOCX, DOC, RTF, ODT, PDF, TXT —
+        into a single unified PDF using LibreOffice as the conversion engine. Built for pipelines
+        where document provenance is messy and output consistency matters.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">LibreOffice</span>
+        <span class="tag">Document Processing</span>
+        <span class="tag">PDF</span>
+      </div>
+      <div class="project-links-row">
+        <a class="project-link" href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Companies House API Integration ── -->
+  <div class="project-card flip reveal">
+    <div class="project-media">
+      <div class="project-num">02</div>
+      <div class="project-viz">
+        <!-- API request/response flow diagram -->
+        <svg class="viz-wave" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <rect width="600" height="300" fill="#060a0d"/>
+
+          <!-- faint grid -->
+          <g stroke="#0c1810" stroke-width="0.5" opacity="0.5">
+            <line x1="0" y1="100" x2="600" y2="100"/>
+            <line x1="0" y1="200" x2="600" y2="200"/>
+            <line x1="150" y1="0" x2="150" y2="300"/>
+            <line x1="300" y1="0" x2="300" y2="300"/>
+            <line x1="450" y1="0" x2="450" y2="300"/>
+          </g>
+
+          <!-- Python script box -->
+          <rect x="20" y="118" width="130" height="64" rx="6" fill="none" stroke="#7aff8a" stroke-width="1.4" opacity="0"><animate attributeName="opacity" from="0" to="0.7" dur="0.4s" begin="0.2s" fill="freeze"/></rect>
+          <text x="85" y="145" text-anchor="middle" font-family="monospace" font-size="12" font-weight="700" fill="#7aff8a" opacity="0">Python<animate attributeName="opacity" from="0" to="0.9" dur="0.3s" begin="0.3s" fill="freeze"/></text>
+          <text x="85" y="163" text-anchor="middle" font-family="monospace" font-size="11" fill="#7aff8a" opacity="0">Script<animate attributeName="opacity" from="0" to="0.6" dur="0.3s" begin="0.35s" fill="freeze"/></text>
+
+          <!-- Arrow 1: Python → API -->
+          <!-- HTTP GET label above arrow -->
+          <text x="218" y="128" text-anchor="middle" font-family="monospace" font-size="9" fill="#7aff8a" opacity="0">HTTP GET<animate attributeName="opacity" from="0" to="0.45" dur="0.3s" begin="0.9s" fill="freeze"/></text>
+          <line x1="150" y1="150" x2="218" y2="150" stroke="#7aff8a" stroke-width="2.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.8s" fill="freeze"/></line>
+          <polygon points="216,143 226,150 216,157" fill="#7aff8a" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.85s" fill="freeze"/></polygon>
+
+          <!-- Companies House API box (centre) -->
+          <rect x="226" y="104" width="148" height="92" rx="6" fill="none" stroke="#7aff8a" stroke-width="1.6" opacity="0"><animate attributeName="opacity" from="0" to="0.75" dur="0.4s" begin="1.1s" fill="freeze"/></rect>
+          <text x="300" y="140" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#7aff8a" opacity="0">Companies House<animate attributeName="opacity" from="0" to="0.9" dur="0.3s" begin="1.2s" fill="freeze"/></text>
+          <text x="300" y="158" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#7aff8a" opacity="0">Open API<animate attributeName="opacity" from="0" to="0.9" dur="0.3s" begin="1.25s" fill="freeze"/></text>
+          <text x="300" y="182" text-anchor="middle" font-family="monospace" font-size="9" fill="#7aff8a" opacity="0">UK Gov · REST<animate attributeName="opacity" from="0" to="0.4" dur="0.3s" begin="1.3s" fill="freeze"/></text>
+
+          <!-- Arrow 2: API → Data -->
+          <text x="432" y="128" text-anchor="middle" font-family="monospace" font-size="9" fill="#ff7a5a" opacity="0">JSON<animate attributeName="opacity" from="0" to="0.45" dur="0.3s" begin="1.7s" fill="freeze"/></text>
+          <line x1="374" y1="150" x2="442" y2="150" stroke="#ff7a5a" stroke-width="2.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.6s" fill="freeze"/></line>
+          <polygon points="440,143 450,150 440,157" fill="#ff7a5a" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.65s" fill="freeze"/></polygon>
+
+          <!-- Structured data output box -->
+          <rect x="450" y="118" width="130" height="64" rx="6" fill="none" stroke="#ff7a5a" stroke-width="1.6" opacity="0"><animate attributeName="opacity" from="0" to="0.8" dur="0.4s" begin="1.8s" fill="freeze"/></rect>
+          <text x="515" y="145" text-anchor="middle" font-family="monospace" font-size="12" font-weight="700" fill="#ff7a5a" opacity="0">Structured<animate attributeName="opacity" from="0" to="0.95" dur="0.3s" begin="1.9s" fill="freeze"/></text>
+          <text x="515" y="163" text-anchor="middle" font-family="monospace" font-size="12" font-weight="700" fill="#ff7a5a" opacity="0">Data<animate attributeName="opacity" from="0" to="0.95" dur="0.3s" begin="1.95s" fill="freeze"/></text>
+
+          <!-- Tilburg label -->
+          <text x="300" y="268" text-anchor="middle" font-family="monospace" font-size="9" fill="#7aff8a" opacity="0">Tilburg University · TSB-RST · 2024<animate attributeName="opacity" from="0" to="0.3" dur="0.4s" begin="2.2s" fill="freeze"/></text>
+        </svg>
+      </div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge live"><span class="status-dot"></span> Released · MIT License</div>
+      <h3 class="project-title">Companies House<br />API Integration</h3>
+      <p class="project-desc">
+        A Python integration with the <strong>UK Companies House Open API</strong>, built at
+        Tilburg University. Queries company data programmatically, handles authentication,
+        pagination and rate limiting, and returns clean structured output — ready for
+        downstream analysis pipelines.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">REST API</span>
+        <span class="tag">Companies House</span>
+        <span class="tag">Data Pipeline</span>
+        <span class="tag">Tilburg University</span>
+      </div>
+      <div class="project-links-row">
+        <a class="project-link" href="https://gitlab.uvt.nl/tsb-rst/os_companies_house_api_integration" target="_blank">GitLab ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MACHINE LEARNING & DATA SCIENCE
+     ═══════════════════════════════════════════ -->
+<section id="ml-ds" class="category-section">
+  <div class="category-header reveal">
+    <div class="section-tag">// Machine Learning &amp; Data Science</div>
+    <h2 class="category-title">ML &amp;<br />Data Science</h2>
+  </div>
+
+  <!-- ── Covert C-VEP BCI ── -->
+  <div class="project-card reveal">
+    <div class="project-media">
+      <div class="project-num">03</div>
+      <div class="project-viz">
+        <svg class="viz-wave" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="brainGlow" cx="50%" cy="42%" r="52%">
+              <stop offset="0%"   stop-color="#7aff8a" stop-opacity="0.08"/>
+              <stop offset="100%" stop-color="#7aff8a" stop-opacity="0.0"/>
+            </radialGradient>
+            <filter id="sg">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="800" height="500" fill="#060a0d"/>
+          <ellipse cx="400" cy="210" rx="310" ry="190" fill="url(#brainGlow)"/>
+          <g stroke="#0c1810" stroke-width="0.5">
+            <line x1="0" y1="125" x2="800" y2="125"/><line x1="0" y1="250" x2="800" y2="250"/>
+            <line x1="0" y1="375" x2="800" y2="375"/>
+            <line x1="160" y1="0" x2="160" y2="500"/><line x1="320" y1="0" x2="320" y2="500"/>
+            <line x1="480" y1="0" x2="480" y2="500"/><line x1="640" y1="0" x2="640" y2="500"/>
+          </g>
+          <circle  class="stim stim-1" cx="120" cy="120" r="36" fill="none" stroke="#7aff8a" stroke-width="1.4" filter="url(#sg)"/>
+          <text x="120" y="174" text-anchor="middle" font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.35">10110100</text>
+          <rect    class="stim stim-2" x="232" y="84" width="72" height="72" fill="none" stroke="#7aff8a" stroke-width="1.4"/>
+          <text x="268" y="174" text-anchor="middle" font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.35">01001101</text>
+          <polygon class="stim stim-3" points="400,78 446,156 354,156" fill="none" stroke="#7aff8a" stroke-width="1.6" filter="url(#sg)"/>
+          <text x="400" y="174" text-anchor="middle" font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.35">11010010</text>
+          <polygon class="stim stim-4" points="532,84 570,120 532,156 494,120" fill="none" stroke="#7aff8a" stroke-width="1.4"/>
+          <text x="532" y="174" text-anchor="middle" font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.35">00111011</text>
+          <line    class="stim stim-5" x1="644" y1="86" x2="686" y2="154" stroke="#7aff8a" stroke-width="1.4" filter="url(#sg)"/>
+          <line    class="stim stim-5" x1="686" y1="86" x2="644" y2="154" stroke="#7aff8a" stroke-width="1.4" filter="url(#sg)"/>
+          <text x="665" y="174" text-anchor="middle" font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.35">10010111</text>
+          <line x1="400" y1="196" x2="400" y2="228" stroke="#ff7a5a" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+          <polygon points="396,226 404,226 400,236" fill="#ff7a5a" opacity="0.6"/>
+          <text x="400" y="256" text-anchor="middle" font-family="monospace" font-size="8" fill="#ff7a5a" opacity="0.55">covert attention</text>
+          <polyline
+            points="30,370 68,370 82,350 92,390 102,370 146,370 160,352 170,388 180,370 224,370 238,351 248,389 258,370 302,370 316,352 326,388 336,370 380,370 394,349 404,391 414,370 458,370 472,351 482,389 492,370 536,370 550,350 560,390 570,370 614,370 628,352 638,388 648,370 692,370 706,351 716,389 726,370 768,370"
+            fill="none" stroke="#7aff8a" stroke-width="1.8" opacity="0.7" filter="url(#sg)"
+          />
+          <text x="30" y="424" font-family="monospace" font-size="8" fill="#7aff8a" opacity="0.38">EEG · O1/O2 · Occipital · 60 Hz C-VEP</text>
+          <text x="30" y="440" font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.22">Graz BCI Conference 2024 · arXiv:2404.00031</text>
+          <text x="770" y="28" text-anchor="end" font-family="monospace" font-size="8" fill="#ff7a5a" opacity="0.45">gaze-independent</text>
+        </svg>
+      </div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge live"><span class="status-dot"></span> Published · Graz BCI 2024</div>
+      <h3 class="project-title">Covert<br />C-VEP BCI</h3>
+      <p class="project-desc">
+        A <strong>gaze-independent brain-computer interface</strong> for people with late-stage ALS,
+        built on code-modulated visual evoked potentials. Participants covertly attend to flickering
+        stimuli without moving their eyes — intent decoded purely from
+        <strong>occipital EEG responses</strong>. Published at the 2024 Graz BCI Conference.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">EEG</span>
+        <span class="tag">C-VEP</span>
+        <span class="tag">BCI</span>
+        <span class="tag">ALS</span>
+        <span class="tag">Eye Tracking</span>
+        <span class="tag">Jupyter</span>
+      </div>
+      <div class="project-links-row">
+        <a class="project-link" href="https://arxiv.org/pdf/2404.00031" target="_blank">arXiv Paper ↗</a>
+        <a class="project-link" href="https://github.com/ShekharNarayanan/Covert_CVEP" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EDA & ECG Preprocessing ── -->
+  <div class="project-card flip reveal">
+    <div class="project-media">
+      <div class="project-num">04</div>
+      <div class="project-viz">
+        <svg class="viz-wave" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="edaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#7aff8a" stop-opacity="0.0"/>
+              <stop offset="25%"  stop-color="#7aff8a" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#7aff8a" stop-opacity="0.55"/>
+            </linearGradient>
+            <linearGradient id="ecgGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#ff7a5a" stop-opacity="0.0"/>
+              <stop offset="25%"  stop-color="#ff7a5a" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#ff7a5a" stop-opacity="0.6"/>
+            </linearGradient>
+            <filter id="glow2">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="800" height="500" fill="#060a0d"/>
+          <g stroke="#0c1810" stroke-width="0.5">
+            <line x1="0" y1="108" x2="800" y2="108"/><line x1="0" y1="216" x2="800" y2="216"/>
+            <line x1="0" y1="324" x2="800" y2="324"/><line x1="0" y1="432" x2="800" y2="432"/>
+            <line x1="200" y1="0" x2="200" y2="500"/><line x1="400" y1="0" x2="400" y2="500"/>
+            <line x1="600" y1="0" x2="600" y2="500"/>
+          </g>
+          <text x="20" y="30"  font-family="monospace" font-size="9" fill="#7aff8a" opacity="0.55">EDA  ·  Electrodermal Activity</text>
+          <path d="M20,185 C70,183 110,180 150,176 C190,171 220,158 252,134 C272,118 292,110 318,112 C344,114 372,126 400,132 C428,137 448,130 474,120 C494,113 516,102 544,94 C566,88 592,90 618,97 C646,105 680,116 760,122"
+            fill="none" stroke="url(#edaGrad)" stroke-width="2.4" filter="url(#glow2)"
+            stroke-dasharray="1200" stroke-dashoffset="1200">
+            <animate attributeName="stroke-dashoffset" from="1200" to="0" dur="2.8s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+          </path>
+          <g opacity="0">
+            <line x1="244" y1="54" x2="244" y2="186" stroke="#7aff8a" stroke-width="0.7" stroke-dasharray="3,4" opacity="0.35"/>
+            <text x="248" y="52" font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.45">SCR onset</text>
+            <line x1="476" y1="54" x2="476" y2="130" stroke="#7aff8a" stroke-width="0.7" stroke-dasharray="3,4" opacity="0.35"/>
+            <text x="480" y="52" font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.45">SCR onset</text>
+            <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="2.8s" fill="freeze"/>
+          </g>
+          <line x1="20" y1="265" x2="780" y2="265" stroke="#7aff8a" stroke-width="0.4" opacity="0.1"/>
+          <text x="20" y="290" font-family="monospace" font-size="9" fill="#ff7a5a" opacity="0.55">ECG  ·  Electrocardiogram</text>
+          <path d="M20,380 L58,380 L70,368 L78,386 L84,380 L90,380 L95,310 L100,450 L105,380 L110,392 L116,366 L122,380 L178,380 L216,380 L228,368 L236,386 L242,380 L248,380 L253,310 L258,450 L263,380 L268,392 L274,366 L280,380 L336,380 L374,380 L386,368 L394,386 L400,380 L406,380 L411,310 L416,450 L421,380 L426,392 L432,366 L438,380 L494,380 L532,380 L544,368 L552,386 L558,380 L564,380 L569,310 L574,450 L579,380 L584,392 L590,366 L596,380 L652,380 L690,380 L702,368 L710,386 L716,380 L722,380 L727,310 L732,450 L737,380 L742,392 L748,366 L754,380 L780,380"
+            fill="none" stroke="url(#ecgGrad2)" stroke-width="2.2" filter="url(#glow2)"
+            stroke-dasharray="2800" stroke-dashoffset="2800">
+            <animate attributeName="stroke-dashoffset" from="2800" to="0" dur="3.2s" begin="1s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+          </path>
+          <g font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.22">
+            <text x="20"  y="486">raw signal</text>
+            <text x="160" y="486">→  bandpass filter</text>
+            <text x="348" y="486">→  peak detection</text>
+            <text x="530" y="486">→  HRV / SCR features</text>
+          </g>
+          <text x="780" y="486" text-anchor="end" font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.16">UvT · TSB-RST · 2025</text>
+        </svg>
+      </div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge live"><span class="status-dot"></span> Released · MIT License</div>
+      <h3 class="project-title">EDA &amp; ECG<br />Preprocessing</h3>
+      <p class="project-desc">
+        A reproducible preprocessing pipeline for <strong>electrodermal activity and ECG
+        biosignals</strong>, developed at Tilburg University (TSB-RST lab). Covers signal filtering,
+        artifact removal, SCR peak detection and HRV feature extraction — clean, analysis-ready
+        output from raw wearable sensor data.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">EDA</span>
+        <span class="tag">ECG</span>
+        <span class="tag">HRV</span>
+        <span class="tag">Signal Processing</span>
+        <span class="tag">Wearables</span>
+        <span class="tag">Tilburg University</span>
+      </div>
+      <div class="project-links-row">
+        <a class="project-link" href="https://gitlab.uvt.nl/tsb-rst/eda_ecg_preprocessing" target="_blank">GitLab ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Live Stocks Tracker (ML&DS) ── -->
+  <div class="project-card reveal">
+    <div class="project-media">
+      <div class="project-num">05</div>
+      <img
+        src="https://github.com/ShekharNarayanan/live_stocks_tracker/raw/main/media/usage_gif_scanner.gif"
+        alt="Live Stocks Tracker — scanner demo"
+        loading="lazy"
+      />
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge live"><span class="status-dot"></span> Live</div>
+      <h3 class="project-title">Live Stocks<br />Tracker</h3>
+      <p class="project-desc">
+        A Streamlit web-app to scan <strong>US large-, mid- and small-cap</strong>
+        universes for top daily gainers and losers. Powered by yfinance and Wikipedia
+        scrapes — <strong>no paid API keys</strong> needed. Includes a Gmail-authenticated
+        personal watchlist with RSI, % change and 30-day volume, backed by Supabase.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">yfinance</span>
+        <span class="tag">Supabase</span>
+        <span class="tag">Google OAuth</span>
+        <span class="tag">RSI</span>
+        <span class="tag">Data Viz</span>
+      </div>
+      <div class="project-links-row">
+        <a class="project-link" href="https://livestockstracker-foryou.streamlit.app/" target="_blank">View Live App ↗</a>
+        <a class="project-link" href="https://github.com/ShekharNarayanan/live_stocks_tracker" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ECG Arrhythmia Detection (ML&DS) ── -->
+  <div class="project-card flip reveal">
+    <div class="project-media">
+      <div class="project-num">06</div>
+      <div class="project-viz">
+        <svg class="viz-wave" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="ecgGrad-mlds" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#7aff8a" stop-opacity="0.0"/>
+              <stop offset="35%"  stop-color="#7aff8a" stop-opacity="0.95"/>
+              <stop offset="80%"  stop-color="#7aff8a" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#ff7a5a" stop-opacity="0.7"/>
+            </linearGradient>
+            <filter id="glow-mlds">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="800" height="500" fill="#03080a"/>
+          <g stroke="#0e2a18" stroke-width="0.8">
+            <line x1="0" y1="100" x2="800" y2="100"/><line x1="0" y1="200" x2="800" y2="200"/>
+            <line x1="0" y1="300" x2="800" y2="300"/><line x1="0" y1="400" x2="800" y2="400"/>
+            <line x1="160" y1="0" x2="160" y2="500"/><line x1="320" y1="0" x2="320" y2="500"/>
+            <line x1="480" y1="0" x2="480" y2="500"/><line x1="640" y1="0" x2="640" y2="500"/>
+          </g>
+          <g stroke="#081810" stroke-width="0.3">
+            <line x1="0" y1="50" x2="800" y2="50"/><line x1="0" y1="150" x2="800" y2="150"/>
+            <line x1="0" y1="250" x2="800" y2="250"/><line x1="0" y1="350" x2="800" y2="350"/>
+            <line x1="0" y1="450" x2="800" y2="450"/>
+            <line x1="80"  y1="0" x2="80"  y2="500"/><line x1="240" y1="0" x2="240" y2="500"/>
+            <line x1="400" y1="0" x2="400" y2="500"/><line x1="560" y1="0" x2="560" y2="500"/>
+            <line x1="720" y1="0" x2="720" y2="500"/>
+          </g>
+          <path d="M0,250 L40,250 L50,240 L58,255 L64,250 L70,250 L75,140 L80,360 L85,250 L90,270 L96,230 L102,250 L160,250 L200,250 L210,240 L218,255 L224,250 L230,250 L235,140 L240,360 L245,250 L250,270 L256,230 L262,250 L320,250 L360,250 L370,240 L378,255 L384,250 L390,250 L395,140 L400,360 L405,250 L410,270 L416,230 L422,250 L480,250 L520,250 L530,240 L538,255 L544,250 L550,250 L555,140 L560,360 L565,250 L570,270 L576,230 L582,250 L640,250 L680,250 L690,240 L698,255 L704,250 L710,250 L715,140 L720,360 L725,250 L730,270 L736,230 L742,250 L800,250"
+            fill="none" stroke="url(#ecgGrad-mlds)" stroke-width="2.4" filter="url(#glow-mlds)">
+            <animate attributeName="stroke-dashoffset" from="2800" to="0"        dur="3.5s" repeatCount="indefinite"/>
+            <animate attributeName="stroke-dasharray"  from="0 2800" to="2800 0" dur="3.5s" repeatCount="indefinite"/>
+          </path>
+          <g opacity="0">
+            <rect x="690" y="94" width="96" height="28" rx="3" fill="none" stroke="#7aff8a" stroke-width="0.8" opacity="0.5"/>
+            <text x="738" y="113" text-anchor="middle" font-family="monospace" font-size="8" fill="#7aff8a" opacity="0.8">NORMAL SINUS</text>
+            <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.4s;3.5s" fill="freeze"/>
+          </g>
+          <text x="20" y="30" fill="#7aff8a" font-family="monospace" font-size="10" opacity="0.55">MIT-BIH · Lead II · 360 Hz</text>
+          <text x="20" y="46" fill="#7aff8a" font-family="monospace" font-size="8"  opacity="0.28">Arrhythmia Classification · In Progress</text>
+          <line x1="20" y1="455" x2="20" y2="415" stroke="#7aff8a" stroke-width="0.8" opacity="0.25"/>
+          <line x1="18" y1="455" x2="22" y2="455" stroke="#7aff8a" stroke-width="0.8" opacity="0.25"/>
+          <line x1="18" y1="415" x2="22" y2="415" stroke="#7aff8a" stroke-width="0.8" opacity="0.25"/>
+          <text x="28" y="438" font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.25">1 mV</text>
+        </svg>
+      </div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge"><span class="status-dot"></span> In Progress</div>
+      <h3 class="project-title">ECG Arrhythmia<br />Detection</h3>
+      <p class="project-desc">
+        A domain deep-dive into <strong>cardiac arrhythmia classification</strong> from ECG signals
+        using the MIT-BIH dataset. Covers signal preprocessing, QRS detection, feature extraction
+        and benchmarking ML architectures — bridging biosignal research with modern ML engineering.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">MIT-BIH</span>
+        <span class="tag">Signal Processing</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">Wearables</span>
+        <span class="tag">Healthcare ML</span>
+      </div>
+      <div class="project-links-row">
+        <a class="project-link" href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     INDEPENDENT
+     ═══════════════════════════════════════════ -->
+<section id="independent" class="category-section">
+  <div class="category-header reveal">
+    <div class="section-tag">// Independent</div>
+    <h2 class="category-title">Independent</h2>
+  </div>
+
+  <!-- ── Live Stocks Tracker (Independent) ── -->
+  <div class="project-card flip reveal">
+    <div class="project-media">
+      <div class="project-num">07</div>
+      <img
+        src="https://github.com/ShekharNarayanan/live_stocks_tracker/raw/main/media/usage_gif_portfolio.gif"
+        alt="Live Stocks Tracker — portfolio view"
+        loading="lazy"
+      />
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge live"><span class="status-dot"></span> Live</div>
+      <h3 class="project-title">Live Stocks<br />Tracker</h3>
+      <p class="project-desc">
+        A Streamlit web-app to scan <strong>US large-, mid- and small-cap</strong>
+        universes for top daily gainers and losers. Powered by yfinance and Wikipedia
+        scrapes — <strong>no paid API keys</strong> needed. Includes a Gmail-authenticated
+        personal watchlist with RSI, % change and 30-day volume, backed by Supabase.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">yfinance</span>
+        <span class="tag">Supabase</span>
+        <span class="tag">Google OAuth</span>
+        <span class="tag">RSI</span>
+        <span class="tag">Data Viz</span>
+      </div>
+      <div class="project-links-row">
+        <a class="project-link" href="https://livestockstracker-foryou.streamlit.app/" target="_blank">View Live App ↗</a>
+        <a class="project-link" href="https://github.com/ShekharNarayanan/live_stocks_tracker" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ECG Arrhythmia Detection (Independent) ── -->
+  <div class="project-card reveal">
+    <div class="project-media">
+      <div class="project-num">08</div>
+      <div class="project-viz">
+        <svg class="viz-wave" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="ecgGrad-ind" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#7aff8a" stop-opacity="0.0"/>
+              <stop offset="35%"  stop-color="#7aff8a" stop-opacity="0.95"/>
+              <stop offset="80%"  stop-color="#7aff8a" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#ff7a5a" stop-opacity="0.7"/>
+            </linearGradient>
+            <filter id="glow-ind">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="800" height="500" fill="#03080a"/>
+          <g stroke="#0e2a18" stroke-width="0.8">
+            <line x1="0" y1="100" x2="800" y2="100"/><line x1="0" y1="200" x2="800" y2="200"/>
+            <line x1="0" y1="300" x2="800" y2="300"/><line x1="0" y1="400" x2="800" y2="400"/>
+            <line x1="160" y1="0" x2="160" y2="500"/><line x1="320" y1="0" x2="320" y2="500"/>
+            <line x1="480" y1="0" x2="480" y2="500"/><line x1="640" y1="0" x2="640" y2="500"/>
+          </g>
+          <g stroke="#081810" stroke-width="0.3">
+            <line x1="0" y1="50" x2="800" y2="50"/><line x1="0" y1="150" x2="800" y2="150"/>
+            <line x1="0" y1="250" x2="800" y2="250"/><line x1="0" y1="350" x2="800" y2="350"/>
+            <line x1="0" y1="450" x2="800" y2="450"/>
+            <line x1="80"  y1="0" x2="80"  y2="500"/><line x1="240" y1="0" x2="240" y2="500"/>
+            <line x1="400" y1="0" x2="400" y2="500"/><line x1="560" y1="0" x2="560" y2="500"/>
+            <line x1="720" y1="0" x2="720" y2="500"/>
+          </g>
+          <path d="M0,250 L40,250 L50,240 L58,255 L64,250 L70,250 L75,140 L80,360 L85,250 L90,270 L96,230 L102,250 L160,250 L200,250 L210,240 L218,255 L224,250 L230,250 L235,140 L240,360 L245,250 L250,270 L256,230 L262,250 L320,250 L360,250 L370,240 L378,255 L384,250 L390,250 L395,140 L400,360 L405,250 L410,270 L416,230 L422,250 L480,250 L520,250 L530,240 L538,255 L544,250 L550,250 L555,140 L560,360 L565,250 L570,270 L576,230 L582,250 L640,250 L680,250 L690,240 L698,255 L704,250 L710,250 L715,140 L720,360 L725,250 L730,270 L736,230 L742,250 L800,250"
+            fill="none" stroke="url(#ecgGrad-ind)" stroke-width="2.4" filter="url(#glow-ind)">
+            <animate attributeName="stroke-dashoffset" from="2800" to="0"        dur="3.5s" repeatCount="indefinite"/>
+            <animate attributeName="stroke-dasharray"  from="0 2800" to="2800 0" dur="3.5s" repeatCount="indefinite"/>
+          </path>
+          <g opacity="0">
+            <rect x="690" y="94" width="96" height="28" rx="3" fill="none" stroke="#7aff8a" stroke-width="0.8" opacity="0.5"/>
+            <text x="738" y="113" text-anchor="middle" font-family="monospace" font-size="8" fill="#7aff8a" opacity="0.8">NORMAL SINUS</text>
+            <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.4s;3.5s" fill="freeze"/>
+          </g>
+          <text x="20" y="30" fill="#7aff8a" font-family="monospace" font-size="10" opacity="0.55">MIT-BIH · Lead II · 360 Hz</text>
+          <text x="20" y="46" fill="#7aff8a" font-family="monospace" font-size="8"  opacity="0.28">Arrhythmia Classification · In Progress</text>
+          <line x1="20" y1="455" x2="20" y2="415" stroke="#7aff8a" stroke-width="0.8" opacity="0.25"/>
+          <line x1="18" y1="455" x2="22" y2="455" stroke="#7aff8a" stroke-width="0.8" opacity="0.25"/>
+          <line x1="18" y1="415" x2="22" y2="415" stroke="#7aff8a" stroke-width="0.8" opacity="0.25"/>
+          <text x="28" y="438" font-family="monospace" font-size="7" fill="#7aff8a" opacity="0.25">1 mV</text>
+        </svg>
+      </div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge"><span class="status-dot"></span> In Progress</div>
+      <h3 class="project-title">ECG Arrhythmia<br />Detection</h3>
+      <p class="project-desc">
+        A domain deep-dive into <strong>cardiac arrhythmia classification</strong> from ECG signals
+        using the MIT-BIH dataset. Covers signal preprocessing, QRS detection, feature extraction
+        and benchmarking ML architectures — bridging biosignal research with modern ML engineering.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">MIT-BIH</span>
+        <span class="tag">Signal Processing</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">Wearables</span>
+        <span class="tag">Healthcare ML</span>
+      </div>
+      <div class="project-links-row">
+        <a class="project-link" href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-left">
+    <h3>Let's<br />Connect</h3>
+    <p>Open to part-time collaborations · Utrecht, NL</p>
+  </div>
+  <div class="footer-right">
+    <a class="footer-link" href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
+    <a class="footer-link" href="https://www.linkedin.com/in/" target="_blank">LinkedIn ↗</a>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <span>Shekhar Narayanan · 2026</span>
+  <span>Utrecht, Netherlands</span>
+</div>
+
+<!-- C-VEP flicker animations -->
+<style>
+  .stim { animation: stimFlicker 1.1s ease-in-out infinite; }
+  .stim-1 { animation-delay: 0.00s; }
+  .stim-2 { animation-delay: 0.22s; }
+  .stim-3 { animation-name: stimFlickerTarget; animation-duration: 0.95s; animation-delay: 0.05s; animation-iteration-count: infinite; }
+  .stim-4 { animation-delay: 0.38s; }
+  .stim-5 { animation-delay: 0.60s; }
+  @keyframes stimFlicker {
+    0%,100% { opacity: 0.6; }
+    46% { opacity: 0.05; }
+    54% { opacity: 0.05; }
+  }
+  @keyframes stimFlickerTarget {
+    0%,100% { opacity: 0.95; filter: drop-shadow(0 0 7px #7aff8a); }
+    42% { opacity: 0.04; filter: none; }
+    58% { opacity: 0.04; filter: none; }
+  }
+</style>
+
+<script src="main.js"></script>
+</body>
 </html>
