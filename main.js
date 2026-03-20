@@ -21,50 +21,41 @@
 })();
 
 /* ─────────────────────────────────────────
-   NEURAL NET BACKGROUND — DISABLED
-
-   Uses window dimensions (not offsetWidth)
-   so it works regardless of canvas CSS sizing
+   NEURAL NET BACKGROUND
+   Drifting nodes, glowing edges, pulsing halos
    ───────────────────────────────────────── */
 (function initNeuralBg() {
   const canvas = document.getElementById('neural-bg');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  let W, H, graph, t = 0;
+  let W, H, pts, t = 0;
 
-  const GREEN_RGB = [34, 99, 220];
-  const BG_DARK   = '#060a0d';
+  const C  = [34, 99, 220];
+  const BG = '#060a0d';
 
-  function rgb() { return GREEN_RGB; }
-
-  function buildGraph(w, h) {
-    const count = Math.max(40, Math.floor((w * h) / 5000));
-    const pts = Array.from({ length: count }, () => ({
-      x:      Math.random() * w,
-      y:      Math.random() * h,
-      r:      1.5 + Math.random() * 2,
-      phase:  Math.random() * Math.PI * 2,
-      speed:  0.35 + Math.random() * 0.55,
-      active: 0,
-    }));
-    const edges = [];
-    const maxDist = w * 0.30;
-    for (let i = 0; i < pts.length; i++) {
-      pts
-        .map((p, j) => ({ j, d: Math.hypot(p.x - pts[i].x, p.y - pts[i].y) }))
-        .filter(o => o.j !== i && o.d < maxDist)
-        .sort((a, b) => a.d - b.d)
-        .slice(0, 3 + Math.floor(Math.random() * 3))
-        .forEach(o => edges.push([i, o.j]));
-    }
-    return { pts, edges };
+  function build(w, h) {
+    const count = Math.max(40, Math.floor((w * h) / 6000));
+    pts = Array.from({ length: count }, () => {
+      const angle = Math.random() * Math.PI * 2;
+      const spd   = 0.08 + Math.random() * 0.18;
+      return {
+        x: Math.random() * w,  y: Math.random() * h,
+        r: 1.2 + Math.random() * 1.8,
+        phase:  Math.random() * Math.PI * 2,
+        pSpeed: 0.3 + Math.random() * 0.5,
+        vx: Math.cos(angle) * spd,
+        vy: Math.sin(angle) * spd,
+        wAngle: Math.random() * Math.PI * 2,
+        wSpeed: 0.002 + Math.random() * 0.004,
+        active: 0,
+      };
+    });
   }
 
   function resize() {
-    // Use window dimensions — reliable even when canvas is position:absolute
     W = canvas.width  = window.innerWidth;
     H = canvas.height = window.innerHeight;
-    graph = buildGraph(W, H);
+    build(W, H);
   }
   resize();
   window.addEventListener('resize', () => {
@@ -73,53 +64,65 @@
   });
 
   function draw() {
-    const C = rgb();
-
     ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = BG_DARK;
+    ctx.fillStyle = BG;
     ctx.fillRect(0, 0, W, H);
-
     t += 0.008;
 
-    /* edges */
-    graph.edges.forEach(([i, j]) => {
-      const a = graph.pts[i], b = graph.pts[j];
-      const bright = (a.active + b.active) * 0.5;
-      ctx.beginPath();
-      ctx.moveTo(a.x, a.y);
-      ctx.lineTo(b.x, b.y);
-      ctx.strokeStyle = `rgba(${C.join(',')},${0.33 + bright * 0.27})`;
-      ctx.lineWidth   = 1.5 + bright * 2.5;
-      ctx.stroke();
+    const md = W * 0.22;
+
+    pts.forEach(n => {
+      n.wAngle += n.wSpeed;
+      n.vx += Math.cos(n.wAngle) * 0.004;
+      n.vy += Math.sin(n.wAngle) * 0.004;
+      const spd = Math.hypot(n.vx, n.vy);
+      if (spd > 0.28) { n.vx = (n.vx / spd) * 0.28; n.vy = (n.vy / spd) * 0.28; }
+      n.x += n.vx;  n.y += n.vy;
+      if (n.x < -20)    n.x = W + 20;
+      if (n.x > W + 20) n.x = -20;
+      if (n.y < -20)    n.y = H + 20;
+      if (n.y > H + 20) n.y = -20;
+      n.active = (Math.sin(t * n.pSpeed + n.phase) + 1) * 0.5;
     });
 
-    /* nodes */
-    graph.pts.forEach(node => {
-      const pulse  = (Math.sin(t * node.speed + node.phase) + 1) * 0.5;
-      node.active  = pulse;
-      const radius = node.r + pulse * 4;
-
-      if (pulse > 0.2) {
-        const grd = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, radius * 5);
-        grd.addColorStop(0, `rgba(${C.join(',')},${0.33 * pulse})`);
-        grd.addColorStop(1, `rgba(${C.join(',')},0)`);
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i];
+      for (let j = i + 1; j < pts.length; j++) {
+        const b = pts[j];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d > md) continue;
+        const str    = 1 - d / md;
+        const bright = (a.active + b.active) * 0.5;
         ctx.beginPath();
-        ctx.arc(node.x, node.y, radius * 5, 0, Math.PI * 2);
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = 'rgba(' + C.join(',') + ',' + (str * (0.15 + bright * 0.25)) + ')';
+        ctx.lineWidth   = str * (0.8 + bright * 1.8);
+        ctx.stroke();
+      }
+    }
+
+    pts.forEach(n => {
+      const pulse  = n.active;
+      const radius = n.r + pulse * 3;
+      if (pulse > 0.3) {
+        const grd = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, radius * 7);
+        grd.addColorStop(0, 'rgba(' + C.join(',') + ',' + (0.22 * pulse) + ')');
+        grd.addColorStop(1, 'rgba(' + C.join(',') + ',0)');
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, radius * 7, 0, Math.PI * 2);
         ctx.fillStyle = grd;
         ctx.fill();
       }
-
       ctx.beginPath();
-      ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${C.join(',')},${0.48 + pulse * 0.12})`;
+      ctx.arc(n.x, n.y, radius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + C.join(',') + ',' + (0.35 + pulse * 0.45) + ')';
       ctx.fill();
     });
 
-    /* vignette */
-    const vig = ctx.createRadialGradient(W / 2, H / 2, H * 0.25, W / 2, H / 2, H * 0.9);
-    const vBg = '6,10,13';
-    vig.addColorStop(0, `rgba(${vBg},0)`);
-    vig.addColorStop(1, `rgba(${vBg},0.18)`);
+    const vig = ctx.createRadialGradient(W/2, H/2, H*0.2, W/2, H/2, H*0.85);
+    vig.addColorStop(0, 'rgba(6,10,13,0)');
+    vig.addColorStop(1, 'rgba(6,10,13,0.72)');
     ctx.fillStyle = vig;
     ctx.fillRect(0, 0, W, H);
 
