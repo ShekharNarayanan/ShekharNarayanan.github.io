@@ -69,5 +69,21 @@ const THEME = {
   '--about-padding':    '7rem 3rem',
   '--category-padding': '5rem 3rem 3rem',
   '--footer-padding':   '5rem 3rem',
+  
+  /* ── Neural net ──
+   --neural-r / --neural-g / --neural-b   RGB components of the node/edge colour (default matches --green #2263dc)
+   --neural-opacity                        overall canvas opacity (0 = invisible, 1 = full)
+   --neural-vignette                       how much the edges darken (0 = no vignette, 1 = fully black at edges)
+   --neural-node-size                      base radius of each node in px
+   --neural-glow                           halo brightness multiplier (0 = no glow, 0.5 = strong)
+   --neural-speed                          max drift speed of nodes (0.1 = slow crawl, 0.5 = fast) */
+'--neural-r':        '34',
+'--neural-g':        '99',
+'--neural-b':        '220',
+'--neural-opacity':  '0.55',
+'--neural-vignette': '0.72',
+'--neural-node-size':'7',
+'--neural-glow':     '0.7',
+'--neural-speed':    '0.9',
 
 };

@@ -27,20 +27,28 @@
 (function initNeuralBg() {
   const canvas = document.getElementById('neural-bg');
   if (!canvas) return;
+
+  const root = document.documentElement;
+  const gv   = function(k) { return parseFloat(getComputedStyle(root).getPropertyValue(k)); };
+
+  const C         = [gv('--neural-r'), gv('--neural-g'), gv('--neural-b')];
+  const MAX_SPEED = gv('--neural-speed')     || 0.28;
+  const GLOW      = gv('--neural-glow')      || 0.22;
+  const NODE_SIZE = gv('--neural-node-size') || 1.8;
+  const VIGNETTE  = gv('--neural-vignette')  || 0.72;
+
   const ctx = canvas.getContext('2d');
   let W, H, pts, t = 0;
-
-  const C  = [34, 99, 220];
   const BG = '#060a0d';
 
   function build(w, h) {
     const count = Math.max(40, Math.floor((w * h) / 6000));
-    pts = Array.from({ length: count }, () => {
-      const angle = Math.random() * Math.PI * 2;
-      const spd   = 0.08 + Math.random() * 0.18;
+    pts = Array.from({ length: count }, function() {
+      var angle = Math.random() * Math.PI * 2;
+      var spd   = 0.08 + Math.random() * 0.18;
       return {
         x: Math.random() * w,  y: Math.random() * h,
-        r: 1.2 + Math.random() * 1.8,
+        r: NODE_SIZE * (0.7 + Math.random()),
         phase:  Math.random() * Math.PI * 2,
         pSpeed: 0.3 + Math.random() * 0.5,
         vx: Math.cos(angle) * spd,
@@ -58,7 +66,7 @@
     build(W, H);
   }
   resize();
-  window.addEventListener('resize', () => {
+  window.addEventListener('resize', function() {
     clearTimeout(window._resizeTimer);
     window._resizeTimer = setTimeout(resize, 100);
   });
@@ -69,14 +77,14 @@
     ctx.fillRect(0, 0, W, H);
     t += 0.008;
 
-    const md = W * 0.22;
+    var md = W * 0.22;
 
-    pts.forEach(n => {
+    pts.forEach(function(n) {
       n.wAngle += n.wSpeed;
       n.vx += Math.cos(n.wAngle) * 0.004;
       n.vy += Math.sin(n.wAngle) * 0.004;
-      const spd = Math.hypot(n.vx, n.vy);
-      if (spd > 0.28) { n.vx = (n.vx / spd) * 0.28; n.vy = (n.vy / spd) * 0.28; }
+      var spd = Math.hypot(n.vx, n.vy);
+      if (spd > MAX_SPEED) { n.vx = (n.vx / spd) * MAX_SPEED; n.vy = (n.vy / spd) * MAX_SPEED; }
       n.x += n.vx;  n.y += n.vy;
       if (n.x < -20)    n.x = W + 20;
       if (n.x > W + 20) n.x = -20;
@@ -85,14 +93,14 @@
       n.active = (Math.sin(t * n.pSpeed + n.phase) + 1) * 0.5;
     });
 
-    for (let i = 0; i < pts.length; i++) {
-      const a = pts[i];
-      for (let j = i + 1; j < pts.length; j++) {
-        const b = pts[j];
-        const d = Math.hypot(a.x - b.x, a.y - b.y);
+    for (var i = 0; i < pts.length; i++) {
+      var a = pts[i];
+      for (var j = i + 1; j < pts.length; j++) {
+        var b = pts[j];
+        var d = Math.hypot(a.x - b.x, a.y - b.y);
         if (d > md) continue;
-        const str    = 1 - d / md;
-        const bright = (a.active + b.active) * 0.5;
+        var str    = 1 - d / md;
+        var bright = (a.active + b.active) * 0.5;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
@@ -102,12 +110,12 @@
       }
     }
 
-    pts.forEach(n => {
-      const pulse  = n.active;
-      const radius = n.r + pulse * 3;
+    pts.forEach(function(n) {
+      var pulse  = n.active;
+      var radius = n.r + pulse * 3;
       if (pulse > 0.3) {
-        const grd = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, radius * 7);
-        grd.addColorStop(0, 'rgba(' + C.join(',') + ',' + (0.22 * pulse) + ')');
+        var grd = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, radius * 7);
+        grd.addColorStop(0, 'rgba(' + C.join(',') + ',' + (GLOW * pulse) + ')');
         grd.addColorStop(1, 'rgba(' + C.join(',') + ',0)');
         ctx.beginPath();
         ctx.arc(n.x, n.y, radius * 7, 0, Math.PI * 2);
@@ -120,9 +128,9 @@
       ctx.fill();
     });
 
-    const vig = ctx.createRadialGradient(W/2, H/2, H*0.2, W/2, H/2, H*0.85);
+    var vig = ctx.createRadialGradient(W/2, H/2, H*0.2, W/2, H/2, H*0.85);
     vig.addColorStop(0, 'rgba(6,10,13,0)');
-    vig.addColorStop(1, 'rgba(6,10,13,0.72)');
+    vig.addColorStop(1, 'rgba(6,10,13,' + VIGNETTE + ')');
     ctx.fillStyle = vig;
     ctx.fillRect(0, 0, W, H);
 
