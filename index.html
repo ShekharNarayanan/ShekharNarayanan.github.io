@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shekhar Narayanan — Portfolio</title>
+  <title data-content="pageTitle">Shekhar Narayanan — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Fira+Code:wght@400;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -32,17 +32,15 @@
 
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-label">Software Engineer · Utrecht, Netherlands</div>
+      <div class="hero-label" data-content="hero.label"></div>
 
       <div class="hero-name-row">
-        <h1 class="hero-name">Shekhar</h1>
-        <img src="media/hero.jpg" alt="Shekhar Narayanan" style="width:300px;height:300px;border-radius:50%;object-fit:cover;display:block;box-shadow:0 0 0 3px #3ecfff, 0 0 18px rgba(62,207,255,0.6), 0 0 40px rgba(62,207,255,0.3);" fetchpriority="high" />
+        <h1 class="hero-name" data-content="hero.firstName"></h1>
+        <img src="media/hero.jpg" alt="Shekhar Narayanan" style="width:400px;height:400px;border-radius:50%;object-fit:cover;display:block;box-shadow:0 0 0 3px #3ecfff, 0 0 18px rgba(62,207,255,0.6), 0 0 40px rgba(62,207,255,0.3);" fetchpriority="high" />
       </div>
-      <h1 class="hero-name hero-lastname"><span>Narayanan</span></h1>
+      <h1 class="hero-name hero-lastname"><span data-content="hero.lastName"></span></h1>
 
-      <p class="hero-tagline">
-        Biosignal processing, ML engineering &amp; building tools that get out of your way.
-      </p>
+      <p class="hero-tagline" data-content="hero.tagline"></p>
 
       <div class="hero-pills">
         <a class="pill" href="#utility">Utility &amp; Dev</a>
@@ -51,32 +49,7 @@
       </div>
 
       <div class="ml-ticker-wrap">
-        <div class="ml-ticker">
-          <span>scikit-learn</span><span class="sep">·</span>
-          <span>XGBoost</span><span class="sep">·</span>
-          <span>Random Forest</span><span class="sep">·</span>
-          <span>MLflow</span><span class="sep">·</span>
-          <span>MNE-Python</span><span class="sep">·</span>
-          <span>CCA</span><span class="sep">·</span>
-          <span>LDA</span><span class="sep">·</span>
-          <span>NeuroKit2</span><span class="sep">·</span>
-          <span>WFDB</span><span class="sep">·</span>
-          <span>pandas</span><span class="sep">·</span>
-          <span>NumPy</span><span class="sep">·</span>
-          <span>SciPy</span><span class="sep">·</span>
-          <span>scikit-learn</span><span class="sep">·</span>
-          <span>XGBoost</span><span class="sep">·</span>
-          <span>Random Forest</span><span class="sep">·</span>
-          <span>MLflow</span><span class="sep">·</span>
-          <span>MNE-Python</span><span class="sep">·</span>
-          <span>CCA</span><span class="sep">·</span>
-          <span>LDA</span><span class="sep">·</span>
-          <span>NeuroKit2</span><span class="sep">·</span>
-          <span>WFDB</span><span class="sep">·</span>
-          <span>pandas</span><span class="sep">·</span>
-          <span>NumPy</span><span class="sep">·</span>
-          <span>SciPy</span><span class="sep">·</span>
-        </div>
+        <div class="ml-ticker" data-content="hero.ticker"></div>
       </div>
     </div>
 
@@ -91,33 +64,11 @@
 <!-- ─── ABOUT ─── -->
 <section id="about">
   <div class="section-tag reveal">// About</div>
-  <h2 class="reveal">Who I am</h2>
-  <p class="reveal">
-    I'm a <strong>machine learning engineer</strong> with a background in neuroscience and biosignal
-    processing. I build end-to-end ML pipelines from scratch — <strong>raw data ingestion,
-    preprocessing, feature engineering, model training and deployment</strong> — across domains
-    ranging from EEG brain-computer interfaces to ECG arrhythmia classification.
-    My stack includes <strong>scikit-learn, XGBoost, Random Forest, MLflow, MNE-Python and NeuroKit2</strong>.
-  </p>
-  <p class="reveal">
-    Previously at the Donders Institute developing ALS-focused BCIs using <strong>CCA and LDA</strong>
-    on live EEG streams. Now based in Utrecht, open to <strong>part-time collaborations</strong>
-    with companies in wearables, biosensors and health-tech — anywhere physiological time-series
-    data meets real-world ML deployment.
-  </p>
+  <h2 class="reveal" data-content="about.heading"></h2>
+  <p class="reveal" data-content="about.p1"></p>
+  <p class="reveal" data-content="about.p2"></p>
   <div class="about-grid">
-    <div class="about-stat reveal">
-      <div class="about-stat-num">4+</div>
-      <div class="about-stat-label">Years in Biosignal Research</div>
-    </div>
-    <div class="about-stat reveal">
-      <div class="about-stat-num">EEG · ECG · EDA</div>
-      <div class="about-stat-label">Signal Modalities</div>
-    </div>
-    <div class="about-stat reveal">
-      <div class="about-stat-num">ML</div>
-      <div class="about-stat-label">Current Focus</div>
-    </div>
+    <div data-content="about.stats"></div>
   </div>
 </section>
 
@@ -188,22 +139,11 @@
       <div class="project-media-overlay"></div>
     </div>
     <div class="project-info">
-      <div class="status-badge"><span class="status-dot"></span> Backend Required</div>
-      <h3 class="project-title">Universal<br />Text Converter</h3>
-      <p class="project-desc">
-        Merges and converts <strong>mixed-format documents</strong> — DOCX, DOC, RTF, ODT, PDF, TXT —
-        into a single unified PDF using LibreOffice as the conversion engine. Built for pipelines
-        where document provenance is messy and output consistency matters.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">LibreOffice</span>
-        <span class="tag">Document Processing</span>
-        <span class="tag">PDF</span>
-      </div>
-      <div class="project-links-row">
-        <a class="project-link" href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
-      </div>
+      <div class="status-badge-wrap" data-project-status="universal-text"></div>
+      <h3 class="project-title" data-project-title="universal-text"></h3>
+      <p class="project-desc" data-project-desc="universal-text"></p>
+      <div class="project-tags" data-project-tags="universal-text"></div>
+      <div class="project-links-row" data-project-links="universal-text"></div>
     </div>
   </div>
 
@@ -259,24 +199,11 @@
       <div class="project-media-overlay"></div>
     </div>
     <div class="project-info">
-      <div class="status-badge live"><span class="status-dot"></span> Released · MIT License</div>
-      <h3 class="project-title">Companies House<br />API Integration</h3>
-      <p class="project-desc">
-        A Python integration with the <strong>UK Companies House Open API</strong>, built at
-        Tilburg University. Queries company data programmatically, handles authentication,
-        pagination and rate limiting, and returns clean structured output — ready for
-        downstream analysis pipelines.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">REST API</span>
-        <span class="tag">Companies House</span>
-        <span class="tag">Data Pipeline</span>
-        <span class="tag">Tilburg University</span>
-      </div>
-      <div class="project-links-row">
-        <a class="project-link" href="https://gitlab.uvt.nl/tsb-rst/os_companies_house_api_integration" target="_blank">GitLab ↗</a>
-      </div>
+      <div class="status-badge-wrap" data-project-status="companies-house"></div>
+      <h3 class="project-title" data-project-title="companies-house"></h3>
+      <p class="project-desc" data-project-desc="companies-house"></p>
+      <div class="project-tags" data-project-tags="companies-house"></div>
+      <div class="project-links-row" data-project-links="companies-house"></div>
     </div>
   </div>
 </section>
@@ -340,29 +267,11 @@
       <div class="project-media-overlay"></div>
     </div>
     <div class="project-info">
-      <div class="status-badge live"><span class="status-dot"></span> Published · Graz BCI 2024</div>
-      <h3 class="project-title">Covert<br />C-VEP BCI</h3>
-      <p class="project-desc">
-        A <strong>gaze-independent brain-computer interface</strong> for people with late-stage ALS.
-        Built a full ML pipeline on top of raw EEG: preprocessing with <strong>MNE-Python</strong>,
-        feature extraction via <strong>CCA</strong> on SSVEP responses, and classification using
-        <strong>LDA and scikit-learn</strong>. Participants decoded intent purely from occipital brain
-        signals — no eye movement required. Published at the 2024 Graz BCI Conference.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">MNE-Python</span>
-        <span class="tag">scikit-learn</span>
-        <span class="tag">CCA</span>
-        <span class="tag">LDA</span>
-        <span class="tag">EEG</span>
-        <span class="tag">BCI</span>
-        <span class="tag">ALS</span>
-      </div>
-      <div class="project-links-row">
-        <a class="project-link" href="https://arxiv.org/pdf/2404.00031" target="_blank">arXiv Paper ↗</a>
-        <a class="project-link" href="https://github.com/ShekharNarayanan/Covert_CVEP" target="_blank">GitHub ↗</a>
-      </div>
+      <div class="status-badge-wrap" data-project-status="covert-cvep"></div>
+      <h3 class="project-title" data-project-title="covert-cvep"></h3>
+      <p class="project-desc" data-project-desc="covert-cvep"></p>
+      <div class="project-tags" data-project-tags="covert-cvep"></div>
+      <div class="project-links-row" data-project-links="covert-cvep"></div>
     </div>
   </div>
 
@@ -427,28 +336,11 @@
       <div class="project-media-overlay"></div>
     </div>
     <div class="project-info">
-      <div class="status-badge live"><span class="status-dot"></span> Released · MIT License</div>
-      <h3 class="project-title">EDA &amp; ECG<br />Preprocessing</h3>
-      <p class="project-desc">
-        A reproducible <strong>ML-ready preprocessing pipeline</strong> for electrodermal activity
-        and ECG biosignals, built at Tilburg University. Takes raw wearable sensor data and outputs
-        clean, analysis-ready features: bandpass filtering, artifact removal, <strong>SCR peak
-        detection via NeuroKit2</strong>, HRV feature extraction with <strong>SciPy</strong>,
-        and structured <strong>pandas</strong> DataFrames ready for downstream scikit-learn pipelines.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">NeuroKit2</span>
-        <span class="tag">scikit-learn</span>
-        <span class="tag">pandas</span>
-        <span class="tag">SciPy</span>
-        <span class="tag">EDA</span>
-        <span class="tag">ECG</span>
-        <span class="tag">HRV</span>
-      </div>
-      <div class="project-links-row">
-        <a class="project-link" href="https://gitlab.uvt.nl/tsb-rst/eda_ecg_preprocessing" target="_blank">GitLab ↗</a>
-      </div>
+      <div class="status-badge-wrap" data-project-status="eda-ecg"></div>
+      <h3 class="project-title" data-project-title="eda-ecg"></h3>
+      <p class="project-desc" data-project-desc="eda-ecg"></p>
+      <div class="project-tags" data-project-tags="eda-ecg"></div>
+      <div class="project-links-row" data-project-links="eda-ecg"></div>
     </div>
   </div>
 
@@ -464,27 +356,11 @@
       <div class="project-media-overlay"></div>
     </div>
     <div class="project-info">
-      <div class="status-badge live"><span class="status-dot"></span> Live</div>
-      <h3 class="project-title">Live Stocks<br />Tracker</h3>
-      <p class="project-desc">
-        A Streamlit web-app to scan <strong>US large-, mid- and small-cap</strong>
-        universes for top daily gainers and losers. Powered by yfinance and Wikipedia
-        scrapes — <strong>no paid API keys</strong> needed. Includes a Gmail-authenticated
-        personal watchlist with RSI, % change and 30-day volume, backed by Supabase.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Streamlit</span>
-        <span class="tag">yfinance</span>
-        <span class="tag">Supabase</span>
-        <span class="tag">Google OAuth</span>
-        <span class="tag">RSI</span>
-        <span class="tag">Data Viz</span>
-      </div>
-      <div class="project-links-row">
-        <a class="project-link" href="https://livestockstracker-foryou.streamlit.app/" target="_blank">View Live App ↗</a>
-        <a class="project-link" href="https://github.com/ShekharNarayanan/live_stocks_tracker" target="_blank">GitHub ↗</a>
-      </div>
+      <div class="status-badge-wrap" data-project-status="stocks-tracker"></div>
+      <h3 class="project-title" data-project-title="stocks-tracker"></h3>
+      <p class="project-desc" data-project-desc="stocks-tracker"></p>
+      <div class="project-tags" data-project-tags="stocks-tracker"></div>
+      <div class="project-links-row" data-project-links="stocks-tracker"></div>
     </div>
   </div>
 
@@ -542,28 +418,11 @@
       <div class="project-media-overlay"></div>
     </div>
     <div class="project-info">
-      <div class="status-badge"><span class="status-dot"></span> In Progress</div>
-      <h3 class="project-title">ECG Arrhythmia<br />Detection</h3>
-      <p class="project-desc">
-        End-to-end <strong>ML pipeline for cardiac arrhythmia classification</strong> on raw ECG
-        signals from the MIT-BIH database. Reads signals with <strong>WFDB</strong>, extracts
-        time-domain and frequency features, then trains and benchmarks <strong>XGBoost and
-        Random Forest</strong> classifiers with cross-validation using <strong>scikit-learn</strong>.
-        Experiment tracking and model versioning handled by <strong>MLflow</strong> — deployable
-        from a single pipeline call.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">XGBoost</span>
-        <span class="tag">Random Forest</span>
-        <span class="tag">scikit-learn</span>
-        <span class="tag">MLflow</span>
-        <span class="tag">WFDB</span>
-        <span class="tag">MIT-BIH</span>
-      </div>
-      <div class="project-links-row">
-        <a class="project-link" href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
-      </div>
+      <div class="status-badge-wrap" data-project-status="ecg-arrhythmia"></div>
+      <h3 class="project-title" data-project-title="ecg-arrhythmia"></h3>
+      <p class="project-desc" data-project-desc="ecg-arrhythmia"></p>
+      <div class="project-tags" data-project-tags="ecg-arrhythmia"></div>
+      <div class="project-links-row" data-project-links="ecg-arrhythmia"></div>
     </div>
   </div>
 </section>
@@ -589,27 +448,11 @@
       <div class="project-media-overlay"></div>
     </div>
     <div class="project-info">
-      <div class="status-badge live"><span class="status-dot"></span> Live</div>
-      <h3 class="project-title">Live Stocks<br />Tracker</h3>
-      <p class="project-desc">
-        A Streamlit web-app to scan <strong>US large-, mid- and small-cap</strong>
-        universes for top daily gainers and losers. Powered by yfinance and Wikipedia
-        scrapes — <strong>no paid API keys</strong> needed. Includes a Gmail-authenticated
-        personal watchlist with RSI, % change and 30-day volume, backed by Supabase.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Streamlit</span>
-        <span class="tag">yfinance</span>
-        <span class="tag">Supabase</span>
-        <span class="tag">Google OAuth</span>
-        <span class="tag">RSI</span>
-        <span class="tag">Data Viz</span>
-      </div>
-      <div class="project-links-row">
-        <a class="project-link" href="https://livestockstracker-foryou.streamlit.app/" target="_blank">View Live App ↗</a>
-        <a class="project-link" href="https://github.com/ShekharNarayanan/live_stocks_tracker" target="_blank">GitHub ↗</a>
-      </div>
+      <div class="status-badge-wrap" data-project-status="stocks-tracker"></div>
+      <h3 class="project-title" data-project-title="stocks-tracker"></h3>
+      <p class="project-desc" data-project-desc="stocks-tracker"></p>
+      <div class="project-tags" data-project-tags="stocks-tracker"></div>
+      <div class="project-links-row" data-project-links="stocks-tracker"></div>
     </div>
   </div>
 
@@ -667,48 +510,22 @@
       <div class="project-media-overlay"></div>
     </div>
     <div class="project-info">
-      <div class="status-badge"><span class="status-dot"></span> In Progress</div>
-      <h3 class="project-title">ECG Arrhythmia<br />Detection</h3>
-      <p class="project-desc">
-        End-to-end <strong>ML pipeline for cardiac arrhythmia classification</strong> on raw ECG
-        signals from the MIT-BIH database. Reads signals with <strong>WFDB</strong>, extracts
-        time-domain and frequency features, then trains and benchmarks <strong>XGBoost and
-        Random Forest</strong> classifiers with cross-validation using <strong>scikit-learn</strong>.
-        Experiment tracking and model versioning handled by <strong>MLflow</strong> — deployable
-        from a single pipeline call.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">XGBoost</span>
-        <span class="tag">Random Forest</span>
-        <span class="tag">scikit-learn</span>
-        <span class="tag">MLflow</span>
-        <span class="tag">WFDB</span>
-        <span class="tag">MIT-BIH</span>
-      </div>
-      <div class="project-links-row">
-        <a class="project-link" href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
-      </div>
+      <div class="status-badge-wrap" data-project-status="ecg-arrhythmia"></div>
+      <h3 class="project-title" data-project-title="ecg-arrhythmia"></h3>
+      <p class="project-desc" data-project-desc="ecg-arrhythmia"></p>
+      <div class="project-tags" data-project-tags="ecg-arrhythmia"></div>
+      <div class="project-links-row" data-project-links="ecg-arrhythmia"></div>
     </div>
   </div>
 </section>
 
 <!-- ─── FOOTER ─── -->
 <footer>
-  <div class="footer-left">
-    <h3>Let's<br />Connect</h3>
-    <p>Open to part-time collaborations · Utrecht, NL</p>
-  </div>
-  <div class="footer-right">
-    <a class="footer-link" href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
-    <a class="footer-link" href="https://www.linkedin.com/in/" target="_blank">LinkedIn ↗</a>
-  </div>
+  <div class="footer-left" data-content="footer.left"></div>
+  <div class="footer-right" data-content="footer.right"></div>
 </footer>
 
-<div class="footer-bottom">
-  <span>Shekhar Narayanan · 2026</span>
-  <span>Utrecht, Netherlands</span>
-</div>
+<div class="footer-bottom" data-content="footer.bottom"></div>
 
 <!-- C-VEP flicker animations -->
 <style>
@@ -730,6 +547,7 @@
   }
 </style>
 
+<script src="content.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

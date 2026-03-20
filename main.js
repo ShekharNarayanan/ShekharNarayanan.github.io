@@ -31,7 +31,6 @@
    so it works regardless of canvas CSS sizing
    ───────────────────────────────────────── */
 (function initNeuralBg() {
-  return; // disabled
   const canvas = document.getElementById('neural-bg');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
@@ -182,4 +181,100 @@
     ticker.style.transform = `translate3d(${Math.round(pos)}px,0,0)`;
     requestAnimationFrame(step);
   }
+})();
+
+/* ─────────────────────────────────────────
+   CONTENT INJECTION
+   Reads CONTENT from content.js and injects
+   into data-content / data-project-* hooks
+   ───────────────────────────────────────── */
+(function injectContent() {
+  if (typeof CONTENT === 'undefined') {
+    console.warn('content.js not loaded');
+    return;
+  }
+
+  /* ── Simple text/html fields ── */
+  document.querySelectorAll('[data-content]').forEach(el => {
+    const key = el.dataset.content;            // e.g. "hero.label"
+    const val = key.split('.').reduce((o, k) => o?.[k], CONTENT);
+    if (val === undefined) return;
+
+    if (key === 'hero.ticker') {
+      // Build ticker spans — duplicated for seamless loop
+      const items = [...val, ...val];
+      el.innerHTML = items.map(t =>
+        `<span>${t}</span><span class="sep">·</span>`
+      ).join('');
+
+    } else if (key === 'about.stats') {
+      el.innerHTML = CONTENT.about.stats.map(s => `
+        <div class="about-stat reveal">
+          <div class="about-stat-num">${s.num}</div>
+          <div class="about-stat-label">${s.label}</div>
+        </div>`).join('');
+
+    } else if (key === 'footer.left') {
+      el.innerHTML = `
+        <h3>${CONTENT.footer.heading}</h3>
+        <p>${CONTENT.footer.tagline}</p>`;
+
+    } else if (key === 'footer.right') {
+      el.innerHTML = `
+        <a class="footer-link" href="${CONTENT.nav.github}" target="_blank">GitHub ↗</a>
+        <a class="footer-link" href="${CONTENT.nav.linkedin}" target="_blank">LinkedIn ↗</a>`;
+
+    } else if (key === 'footer.bottom') {
+      el.innerHTML = `
+        <span>${CONTENT.footer.bottom}</span>
+        <span>${CONTENT.footer.location}</span>`;
+
+    } else if (key === 'pageTitle') {
+      document.title = val;
+
+    } else {
+      el.innerHTML = val;
+    }
+  });
+
+  /* ── Project panels ── */
+  const projectMap = {};
+  CONTENT.projects.forEach(p => { projectMap[p.id] = p; });
+
+  // Status badges
+  document.querySelectorAll('[data-project-status]').forEach(el => {
+    const p = projectMap[el.dataset.projectStatus];
+    if (!p) return;
+    const cls = p.status.live ? 'status-badge live' : 'status-badge';
+    el.innerHTML = `<div class="${cls}"><span class="status-dot"></span> ${p.status.text}</div>`;
+  });
+
+  // Titles
+  document.querySelectorAll('[data-project-title]').forEach(el => {
+    const p = projectMap[el.dataset.projectTitle];
+    if (p) el.innerHTML = p.title;
+  });
+
+  // Descriptions
+  document.querySelectorAll('[data-project-desc]').forEach(el => {
+    const p = projectMap[el.dataset.projectDesc];
+    if (p) el.innerHTML = p.desc;
+  });
+
+  // Tags
+  document.querySelectorAll('[data-project-tags]').forEach(el => {
+    const p = projectMap[el.dataset.projectTags];
+    if (!p) return;
+    el.innerHTML = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
+  });
+
+  // Links
+  document.querySelectorAll('[data-project-links]').forEach(el => {
+    const p = projectMap[el.dataset.projectLinks];
+    if (!p) return;
+    el.innerHTML = p.links.map(l =>
+      `<a class="project-link" href="${l.url}" target="_blank">${l.label}</a>`
+    ).join('');
+  });
+
 })();
