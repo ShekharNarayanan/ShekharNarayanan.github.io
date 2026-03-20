@@ -8,7 +8,6 @@
 (function initTheme() {
   const btn  = document.getElementById('theme-toggle');
   const body = document.body;
-
   const saved = localStorage.getItem('theme');
   if (saved === 'light') {
     body.classList.add('light');
@@ -16,7 +15,6 @@
   } else {
     if (btn) btn.textContent = '☀ Light';
   }
-
   if (!btn) return;
   btn.addEventListener('click', () => {
     const isLight = body.classList.toggle('light');
@@ -28,7 +26,8 @@
 
 /* ─────────────────────────────────────────
    NEURAL NET BACKGROUND
-   Sparse nodes + edges, organic activation pulses
+   Uses window dimensions (not offsetWidth)
+   so it works regardless of canvas CSS sizing
    ───────────────────────────────────────── */
 (function initNeuralBg() {
   const canvas = document.getElementById('neural-bg');
@@ -44,36 +43,39 @@
   function rgb(isLight) { return isLight ? GN_LIGHT : GREEN_RGB; }
 
   function buildGraph(w, h) {
-    const count = Math.max(30, Math.floor((w * h) / 5000));
+    const count = Math.max(40, Math.floor((w * h) / 5000));
     const pts = Array.from({ length: count }, () => ({
-      x:     Math.random() * w,
-      y:     Math.random() * h,
-      r:     1.5 + Math.random() * 2,
-      phase: Math.random() * Math.PI * 2,
-      speed: 0.35 + Math.random() * 0.55,
+      x:      Math.random() * w,
+      y:      Math.random() * h,
+      r:      1.5 + Math.random() * 2,
+      phase:  Math.random() * Math.PI * 2,
+      speed:  0.35 + Math.random() * 0.55,
       active: 0,
     }));
-
     const edges = [];
     const maxDist = w * 0.30;
     for (let i = 0; i < pts.length; i++) {
-      const sorted = pts
+      pts
         .map((p, j) => ({ j, d: Math.hypot(p.x - pts[i].x, p.y - pts[i].y) }))
         .filter(o => o.j !== i && o.d < maxDist)
         .sort((a, b) => a.d - b.d)
-        .slice(0, 3 + Math.floor(Math.random() * 3));
-      sorted.forEach(o => edges.push([i, o.j]));
+        .slice(0, 3 + Math.floor(Math.random() * 3))
+        .forEach(o => edges.push([i, o.j]));
     }
     return { pts, edges };
   }
 
   function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
+    // Use window dimensions — reliable even when canvas is position:absolute
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
     graph = buildGraph(W, H);
   }
   resize();
-  window.addEventListener('resize', resize);
+  window.addEventListener('resize', () => {
+    clearTimeout(window._resizeTimer);
+    window._resizeTimer = setTimeout(resize, 100);
+  });
 
   function draw() {
     const isLight = document.body.classList.contains('light');
@@ -89,11 +91,10 @@
     graph.edges.forEach(([i, j]) => {
       const a = graph.pts[i], b = graph.pts[j];
       const bright = (a.active + b.active) * 0.5;
-      const alpha  = 0.55 + bright * 0.45;
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
-      ctx.strokeStyle = `rgba(${C.join(',')},${alpha})`;
+      ctx.strokeStyle = `rgba(${C.join(',')},${0.55 + bright * 0.45})`;
       ctx.lineWidth   = 1.5 + bright * 2.5;
       ctx.stroke();
     });
@@ -102,7 +103,6 @@
     graph.pts.forEach(node => {
       const pulse  = (Math.sin(t * node.speed + node.phase) + 1) * 0.5;
       node.active  = pulse;
-      const alpha  = 0.8 + pulse * 0.2;
       const radius = node.r + pulse * 4;
 
       if (pulse > 0.2) {
@@ -117,7 +117,7 @@
 
       ctx.beginPath();
       ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${C.join(',')},${alpha})`;
+      ctx.fillStyle = `rgba(${C.join(',')},${0.8 + pulse * 0.2})`;
       ctx.fill();
     });
 
@@ -147,30 +147,37 @@
       }
     });
   }, { threshold: 0.08 });
-
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
 
 
 /* ─────────────────────────────────────────
-   ML TICKER — JS-driven scroll
-   Guaranteed to work on any static host
+   ML TICKER — time-based, GPU-accelerated
    ───────────────────────────────────────── */
 (function initTicker() {
   const ticker = document.querySelector('.ml-ticker');
   if (!ticker) return;
 
-  let pos = 0;
-  const speed = 0.6; // px per frame
+  ticker.style.willChange = 'transform';
 
-  function step() {
-    pos -= speed;
-    // Reset when first half has scrolled fully off-screen
-    const halfW = ticker.scrollWidth / 2;
-    if (Math.abs(pos) >= halfW) pos = 0;
-    ticker.style.transform = `translateX(${pos}px)`;
+  let pos   = 0;
+  let halfW = 0;
+  let last  = null;
+  const PX_PER_SEC = 80;
+
+  // Measure after first paint so layout is settled
+  requestAnimationFrame(() => {
+    halfW = ticker.scrollWidth / 2;
+    requestAnimationFrame(step);
+  });
+
+  function step(ts) {
+    if (last === null) last = ts;
+    const dt = Math.min((ts - last) / 1000, 0.05); // cap delta to avoid jumps
+    last = ts;
+    pos -= PX_PER_SEC * dt;
+    if (halfW > 0 && Math.abs(pos) >= halfW) pos = 0;
+    ticker.style.transform = `translate3d(${Math.round(pos)}px,0,0)`;
     requestAnimationFrame(step);
   }
-
-  requestAnimationFrame(step);
 })();
