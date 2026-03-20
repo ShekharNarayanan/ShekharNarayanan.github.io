@@ -19,7 +19,7 @@ const CONTENT = {
     label:     'Software Engineer · Utrecht, Netherlands',
     firstName: 'Shekhar',
     lastName:  'Narayanan',
-    tagline:   'Electronics engineer turned ML researcher. I build pipelines that go from raw data to working models.',
+    tagline:   'Electronics engineer turned ML researcher. I build pipelines that go from raw data to actionable insights.',
     image:     'media/hero.jpg',
     ticker: [
       'scikit-learn', 'XGBoost', 'Random Forest', 'MLflow',
@@ -31,11 +31,11 @@ const CONTENT = {
   /* ── ABOUT ── */
   about: {
     heading: 'Who I am',
-    p1: `I have four years of experience working with scientists and translating their needs into practical software,
+    p1: `I have four years of experience working data heavy python projects,
     from dashboards to complete data pipelines. My background is in electronics engineering and neurotechnology,
     which means I spend a lot of time working with noisy, real-world physiological datasets.
-    I use <strong>scikit-learn, XGBoost, MLflow, MNE-Python and NeuroKit2</strong> regularly and I am comfortable
-    taking a project from raw signal to trained, tracked model.`,
+    I have experience with <strong>scikit-learn, XGBoost, MLflow, MNE-Python and NeuroKit2</strong> regularly and I am comfortable
+    with data wrangling, feature extraction, model selection/evaluation and deployment.`,
     p2: `Currently a Software Engineer and Data Steward at Tilburg University, where I write research software
     and advise scientists in the School of Social and Behavioral Sciences. Before that I led a
     <strong>brain-computer interface project at the Donders Institute</strong>, resulting in a first-author
@@ -51,7 +51,7 @@ const CONTENT = {
   /* ── FOOTER ── */
   footer: {
     heading:  "Let's Connect",
-    tagline:  'Open to part-time collaborations · Utrecht, NL',
+    tagline:  'Open to collaborations · Utrecht, NL',
     bottom:   'Shekhar Narayanan · 2026',
     location: 'Utrecht, Netherlands',
   },

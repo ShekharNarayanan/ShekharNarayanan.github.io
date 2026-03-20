@@ -14,24 +14,6 @@
   --nav-bg:    rgba(6,10,13,0.85);
 }
 
-/* ─── LIGHT ─── */
-body.light {
-  --bg:        #f0f4f1;
-  --bg2:       #e2e9e4;
-  --green:     #007ab8;
-  --coral:     #c94a28;
-  --text:      #0d1f14;
-  --muted:     #3a5545;
-  --border:    rgba(0,120,180,0.18);
-  --nav-bg:    rgba(240,244,241,0.92);
-}
-body.light canvas#neural-bg {
-  filter: invert(1) hue-rotate(100deg);
-  opacity: 0.1;
-}
-body.light .project-media img {
-  filter: saturate(0.85) brightness(1.05);
-}
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -99,25 +81,6 @@ nav {
 .nav-links a:hover { color: var(--green); }
 
 /* ─── Theme toggle button ─── */
-.theme-toggle {
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.35rem 0.9rem;
-  cursor: pointer;
-  font-family: 'Fira Code', monospace;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-  white-space: nowrap;
-}
-.theme-toggle:hover {
-  color: var(--green);
-  border-color: var(--green);
-}
 
 /* ─────────────────────────────────────────
    HERO
@@ -164,11 +127,6 @@ nav {
     0 0 18px rgba(62,207,255,0.4),
     0 0 40px rgba(62,207,255,0.2);
 }
-body.light .hero-img {
-  box-shadow:
-    0 0 0 2px rgba(0,120,180,0.5),
-    0 0 18px rgba(0,120,180,0.25);
-}
 
 canvas#neural-bg {
   display: none;
@@ -187,12 +145,6 @@ canvas#neural-bg {
     0 0 30px rgba(6,10,13,1),
     0 0 60px rgba(6,10,13,1),
     0 0 80px rgba(6,10,13,0.8);
-}
-body.light .hero-label {
-  color: rgba(13, 31, 20, 0.7);
-  text-shadow:
-    0 0 30px rgba(240,244,241,1),
-    0 0 60px rgba(240,244,241,1);
 }
 
 .hero-name {
@@ -260,7 +212,6 @@ body.light .hero-label {
   color: var(--green);
   border: 1px solid rgba(62,207,255,0.5);
 }
-body.light .pill { border-color: rgba(0,120,180,0.4); }
 
 .pill:hover {
   background: var(--green);
@@ -421,9 +372,6 @@ body.light .pill { border-color: rgba(0,120,180,0.4); }
   inset: 0;
   background: linear-gradient(135deg, rgba(6,10,13,0.3) 0%, transparent 60%);
   pointer-events: none;
-}
-body.light .project-media-overlay {
-  background: linear-gradient(135deg, rgba(240,244,241,0.2) 0%, transparent 60%);
 }
 
 .project-num {

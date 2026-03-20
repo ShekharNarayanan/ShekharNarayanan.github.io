@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-content="pageTitle">Shekhar Narayanan — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Fira+Code:wght@400;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-logo">SN</div>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#utility">Utility &amp; Dev</a>
+      <a href="#ml-ds">ML &amp; Data Science</a>
+      <a href="#independent">Independent</a>
+      <a href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
+    </div>
+    <button class="theme-toggle" id="theme-toggle">☀ Light</button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <canvas id="neural-bg"></canvas>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-label" data-content="hero.label"></div>
+
+      <div class="hero-name-row">
+        <h1 class="hero-name" data-content="hero.firstName"></h1>
+        <img src="media/hero.jpg" alt="Shekhar Narayanan" style="width:400px;height:400px;border-radius:50%;object-fit:cover;display:block;box-shadow:0 0 0 3px #2263dc, 0 0 18px rgba(62,207,255,0.6), 0 0 40px rgba(62,207,255,0.3);" fetchpriority="high" />
+      </div>
+      <h1 class="hero-name hero-lastname"><span data-content="hero.lastName"></span></h1>
+
+      <p class="hero-tagline" data-content="hero.tagline"></p>
+
+      <div class="hero-pills">
+        <a class="pill" href="#utility">Utility &amp; Dev</a>
+        <a class="pill" href="#ml-ds">ML &amp; Data Science</a>
+        <a class="pill" href="#independent">Independent</a>
+      </div>
+
+      <div class="ml-ticker-wrap">
+        <div class="ml-ticker" data-content="hero.ticker"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="section-tag reveal">// About</div>
+  <h2 class="reveal" data-content="about.heading"></h2>
+  <p class="reveal" data-content="about.p1"></p>
+  <p class="reveal" data-content="about.p2"></p>
+  <div class="about-grid">
+    <div data-content="about.stats"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     UTILITY / SOFTWARE DEVELOPMENT
+     ═══════════════════════════════════════════ -->
+<section id="utility" class="category-section">
+  <div class="category-header reveal">
+    <div class="section-tag">// Utility &amp; Software Development</div>
+    <h2 class="category-title">Utility &amp;<br />Software Dev</h2>
+  </div>
+
+  <!-- ── Universal Text Converter ── -->
+  <div class="project-card reveal">
+    <div class="project-media">
+      <div class="project-num">01</div>
+      <div class="project-viz" data-project-viz="universal-text"></div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge-wrap" data-project-status="universal-text"></div>
+      <h3 class="project-title" data-project-title="universal-text"></h3>
+      <p class="project-desc" data-project-desc="universal-text"></p>
+      <div class="project-tags" data-project-tags="universal-text"></div>
+      <div class="project-links-row" data-project-links="universal-text"></div>
+    </div>
+  </div>
+<!-- ── YouTube API Data Extraction ── -->
+  <div class="project-card flip reveal">
+    <div class="project-media">
+      <div class="project-num">02</div>
+      <div class="project-viz" data-project-viz="youtube-api"></div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge-wrap" data-project-status="youtube-api"></div>
+      <h3 class="project-title" data-project-title="youtube-api"></h3>
+      <p class="project-desc" data-project-desc="youtube-api"></p>
+      <div class="project-tags" data-project-tags="youtube-api"></div>
+      <div class="project-links-row" data-project-links="youtube-api"></div>
+    </div>
+  </div>
+  <!-- ── Companies House API Integration ── -->
+  <div class="project-card flip reveal">
+    <div class="project-media">
+      <div class="project-num">03</div>
+      <div class="project-viz" data-project-viz="companies-house"></div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge-wrap" data-project-status="companies-house"></div>
+      <h3 class="project-title" data-project-title="companies-house"></h3>
+      <p class="project-desc" data-project-desc="companies-house"></p>
+      <div class="project-tags" data-project-tags="companies-house"></div>
+      <div class="project-links-row" data-project-links="companies-house"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MACHINE LEARNING & DATA SCIENCE
+     ═══════════════════════════════════════════ -->
+<section id="ml-ds" class="category-section">
+  <div class="category-header reveal">
+    <div class="section-tag">// Machine Learning &amp; Data Science</div>
+    <h2 class="category-title">ML &amp;<br />Data Science</h2>
+  </div>
+
+  <!-- ── Covert C-VEP BCI ── -->
+  <div class="project-card reveal">
+    <div class="project-media">
+      <div class="project-num">03</div>
+      <div class="project-viz" data-project-viz="covert-cvep"></div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge-wrap" data-project-status="covert-cvep"></div>
+      <h3 class="project-title" data-project-title="covert-cvep"></h3>
+      <p class="project-desc" data-project-desc="covert-cvep"></p>
+      <div class="project-tags" data-project-tags="covert-cvep"></div>
+      <div class="project-links-row" data-project-links="covert-cvep"></div>
+    </div>
+  </div>
+
+  <!-- ── EDA & ECG Preprocessing ── -->
+  <div class="project-card flip reveal">
+    <div class="project-media">
+      <div class="project-num">04</div>
+      <div class="project-viz" data-project-viz="eda-ecg"></div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge-wrap" data-project-status="eda-ecg"></div>
+      <h3 class="project-title" data-project-title="eda-ecg"></h3>
+      <p class="project-desc" data-project-desc="eda-ecg"></p>
+      <div class="project-tags" data-project-tags="eda-ecg"></div>
+      <div class="project-links-row" data-project-links="eda-ecg"></div>
+    </div>
+  </div>
+
+  <!-- ── Live Stocks Tracker (ML&DS) ── -->
+  <div class="project-card reveal">
+    <div class="project-media">
+      <div class="project-num">05</div>
+      <img
+        src="https://github.com/ShekharNarayanan/live_stocks_tracker/raw/main/media/usage_gif_scanner.gif"
+        alt="Live Stocks Tracker — scanner demo"
+        loading="lazy"
+      />
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge-wrap" data-project-status="stocks-tracker"></div>
+      <h3 class="project-title" data-project-title="stocks-tracker"></h3>
+      <p class="project-desc" data-project-desc="stocks-tracker"></p>
+      <div class="project-tags" data-project-tags="stocks-tracker"></div>
+      <div class="project-links-row" data-project-links="stocks-tracker"></div>
+    </div>
+  </div>
+
+  <!-- ── ECG Arrhythmia Detection (ML&DS) ── -->
+  <div class="project-card flip reveal">
+    <div class="project-media">
+      <div class="project-num">06</div>
+      <div class="project-viz" data-project-viz="ecg-arrhythmia-mlds"></div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge-wrap" data-project-status="ecg-arrhythmia"></div>
+      <h3 class="project-title" data-project-title="ecg-arrhythmia"></h3>
+      <p class="project-desc" data-project-desc="ecg-arrhythmia"></p>
+      <div class="project-tags" data-project-tags="ecg-arrhythmia"></div>
+      <div class="project-links-row" data-project-links="ecg-arrhythmia"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     INDEPENDENT
+     ═══════════════════════════════════════════ -->
+<section id="independent" class="category-section">
+  <div class="category-header reveal">
+    <div class="section-tag">// Independent</div>
+    <h2 class="category-title">Independent</h2>
+  </div>
+
+  <!-- ── Live Stocks Tracker (Independent) ── -->
+  <div class="project-card flip reveal">
+    <div class="project-media">
+      <div class="project-num">07</div>
+      <img
+        src="https://github.com/ShekharNarayanan/live_stocks_tracker/raw/main/media/usage_gif_portfolio.gif"
+        alt="Live Stocks Tracker — portfolio view"
+        loading="lazy"
+      />
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge-wrap" data-project-status="stocks-tracker"></div>
+      <h3 class="project-title" data-project-title="stocks-tracker"></h3>
+      <p class="project-desc" data-project-desc="stocks-tracker"></p>
+      <div class="project-tags" data-project-tags="stocks-tracker"></div>
+      <div class="project-links-row" data-project-links="stocks-tracker"></div>
+    </div>
+  </div>
+
+  <!-- ── ECG Arrhythmia Detection (Independent) ── -->
+  <div class="project-card reveal">
+    <div class="project-media">
+      <div class="project-num">08</div>
+      <div class="project-viz" data-project-viz="ecg-arrhythmia-ind"></div>
+      <div class="project-media-overlay"></div>
+    </div>
+    <div class="project-info">
+      <div class="status-badge-wrap" data-project-status="ecg-arrhythmia"></div>
+      <h3 class="project-title" data-project-title="ecg-arrhythmia"></h3>
+      <p class="project-desc" data-project-desc="ecg-arrhythmia"></p>
+      <div class="project-tags" data-project-tags="ecg-arrhythmia"></div>
+      <div class="project-links-row" data-project-links="ecg-arrhythmia"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-left" data-content="footer.left"></div>
+  <div class="footer-right" data-content="footer.right"></div>
+</footer>
+
+<div class="footer-bottom" data-content="footer.bottom"></div>
+
+<!-- C-VEP flicker animations -->
+<style>
+  .stim { animation: stimFlicker 1.1s ease-in-out infinite; }
+  .stim-1 { animation-delay: 0.00s; }
+  .stim-2 { animation-delay: 0.22s; }
+  .stim-3 { animation-name: stimFlickerTarget; animation-duration: 0.95s; animation-delay: 0.05s; animation-iteration-count: infinite; }
+  .stim-4 { animation-delay: 0.38s; }
+  .stim-5 { animation-delay: 0.60s; }
+  @keyframes stimFlicker {
+    0%,100% { opacity: 0.6; }
+    46% { opacity: 0.05; }
+    54% { opacity: 0.05; }
+  }
+  @keyframes stimFlickerTarget {
+    0%,100% { opacity: 0.95; filter: drop-shadow(0 0 7px #3ecfff); }
+    42% { opacity: 0.04; filter: none; }
+    58% { opacity: 0.04; filter: none; }
+  }
+</style>
+
+<script src="theme.js"></script>
+<script src="content.js"></script>
+<script src="visuals.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

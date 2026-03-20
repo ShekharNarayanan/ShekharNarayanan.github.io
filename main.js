@@ -2,26 +2,7 @@
    main.js — Shekhar Narayanan Portfolio
    ───────────────────────────────────────── */
 
-/* ─────────────────────────────────────────
-   THEME TOGGLE
-   ───────────────────────────────────────── */
-(function initTheme() {
-  const btn  = document.getElementById('theme-toggle');
-  const body = document.body;
-  const saved = localStorage.getItem('theme');
-  if (saved === 'light') {
-    body.classList.add('light');
-    if (btn) btn.textContent = '☾ Dark';
-  } else {
-    if (btn) btn.textContent = '☀ Light';
-  }
-  if (!btn) return;
-  btn.addEventListener('click', () => {
-    const isLight = body.classList.toggle('light');
-    btn.textContent = isLight ? '☾ Dark' : '☀ Light';
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  });
-})();
+
 
 
 /* ─────────────────────────────────────────
@@ -36,12 +17,10 @@
   const ctx = canvas.getContext('2d');
   let W, H, graph, t = 0;
 
-  const GREEN_RGB = [62, 207, 255];
+  const GREEN_RGB = [34, 99, 220];
   const BG_DARK   = '#060a0d';
-  const BG_LIGHT  = '#f0f4f1';
-  const GN_LIGHT  = [0, 120, 180];
 
-  function rgb(isLight) { return isLight ? GN_LIGHT : GREEN_RGB; }
+  function rgb() { return GREEN_RGB; }
 
   function buildGraph(w, h) {
     const count = Math.max(40, Math.floor((w * h) / 5000));
@@ -79,11 +58,10 @@
   });
 
   function draw() {
-    const isLight = document.body.classList.contains('light');
-    const C = rgb(isLight);
+    const C = rgb();
 
     ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = isLight ? BG_LIGHT : BG_DARK;
+    ctx.fillStyle = BG_DARK;
     ctx.fillRect(0, 0, W, H);
 
     t += 0.008;
@@ -124,7 +102,7 @@
 
     /* vignette */
     const vig = ctx.createRadialGradient(W / 2, H / 2, H * 0.25, W / 2, H / 2, H * 0.9);
-    const vBg = isLight ? '240,244,241' : '6,10,13';
+    const vBg = '6,10,13';
     vig.addColorStop(0, `rgba(${vBg},0)`);
     vig.addColorStop(1, `rgba(${vBg},0.18)`);
     ctx.fillStyle = vig;
@@ -293,6 +271,6 @@
     const id  = el.dataset.projectViz;
     const svg = VISUALS[id];
     if (svg) el.innerHTML = svg;
-    else console.warn(`No visual found for: ${id}`);
+    else console.warn('No visual found for: ' + id);
   });
 })();
