@@ -17,9 +17,9 @@
   <div class="nav-right">
     <div class="nav-links">
       <a href="#about">About</a>
-      <a href="#utility">Utility &amp; Dev</a>
-      <a href="#ml-ds">ML &amp; Data Science</a>
-      <a href="#independent">Independent</a>
+      <a class="nav-cat" href="#utility"   data-cat-nav="utility"></a>
+      <a class="nav-cat" href="#ml-ds"    data-cat-nav="ml-ds"></a>
+      <a class="nav-cat" href="#independent" data-cat-nav="independent"></a>
       <a href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
     </div>
   </div>
@@ -42,9 +42,9 @@
       <p class="hero-tagline" data-content="hero.tagline"></p>
 
       <div class="hero-pills">
-        <a class="pill" href="#utility">Utility &amp; Dev</a>
-        <a class="pill" href="#ml-ds">ML &amp; Data Science</a>
-        <a class="pill" href="#independent">Independent</a>
+        <a class="pill" href="#utility"      data-cat-nav="utility"></a>
+        <a class="pill" href="#ml-ds"       data-cat-nav="ml-ds"></a>
+        <a class="pill" href="#independent"  data-cat-nav="independent"></a>
       </div>
 
       <div class="ml-ticker-wrap">
@@ -66,9 +66,6 @@
   <h2 class="reveal" data-content="about.heading"></h2>
   <p class="reveal" data-content="about.p1"></p>
   <p class="reveal" data-content="about.p2"></p>
-  <div class="about-grid">
-    <div data-content="about.stats"></div>
-  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════
@@ -76,8 +73,8 @@
      ═══════════════════════════════════════════ -->
 <section id="utility" class="category-section">
   <div class="category-header reveal">
-    <div class="section-tag">// Utility &amp; Software Development</div>
-    <h2 class="category-title">Utility &amp;<br />Software Dev</h2>
+    <div class="section-tag" data-cat-tag="utility"></div>
+    <h2 class="category-title" data-cat-title="utility"></h2>
   </div>
 
   <!-- ── Universal Text Converter ── -->
@@ -132,8 +129,8 @@
      ═══════════════════════════════════════════ -->
 <section id="ml-ds" class="category-section">
   <div class="category-header reveal">
-    <div class="section-tag">// Machine Learning &amp; Data Science</div>
-    <h2 class="category-title">ML &amp;<br />Data Science</h2>
+    <div class="section-tag" data-cat-tag="ml-ds"></div>
+    <h2 class="category-title" data-cat-title="ml-ds"></h2>
   </div>
 
   <!-- ── Covert C-VEP BCI ── -->
@@ -210,8 +207,8 @@
      ═══════════════════════════════════════════ -->
 <section id="independent" class="category-section">
   <div class="category-header reveal">
-    <div class="section-tag">// Independent</div>
-    <h2 class="category-title">Independent</h2>
+    <div class="section-tag" data-cat-tag="independent"></div>
+    <h2 class="category-title" data-cat-title="independent"></h2>
   </div>
 
   <!-- ── Live Stocks Tracker (Independent) ── -->

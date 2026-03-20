@@ -5,6 +5,21 @@
 
 
 
+
+/* ─────────────────────────────────────────
+   THEME INJECTION
+   Reads THEME from theme.js and writes all
+   tokens as CSS variables onto :root
+   ───────────────────────────────────────── */
+(function injectTheme() {
+  if (typeof THEME === 'undefined') {
+    console.warn('theme.js not loaded');
+    return;
+  }
+  const root = document.documentElement;
+  Object.entries(THEME).forEach(([k, v]) => root.style.setProperty(k, v));
+})();
+
 /* ─────────────────────────────────────────
    NEURAL NET BACKGROUND — DISABLED
 
@@ -272,5 +287,35 @@
     const svg = VISUALS[id];
     if (svg) el.innerHTML = svg;
     else console.warn('No visual found for: ' + id);
+  });
+})();
+
+/* ─────────────────────────────────────────
+   CATEGORY INJECTION
+   Reads CONTENT.categories and injects into
+   data-cat-nav / data-cat-tag / data-cat-title
+   ───────────────────────────────────────── */
+(function injectCategories() {
+  if (typeof CONTENT === 'undefined' || !CONTENT.categories) return;
+
+  const catMap = {};
+  CONTENT.categories.forEach(c => { catMap[c.id] = c; });
+
+  // Nav links and hero pills
+  document.querySelectorAll('[data-cat-nav]').forEach(el => {
+    const c = catMap[el.dataset.catNav];
+    if (c) el.innerHTML = c.navLabel;
+  });
+
+  // Section tags (// Utility & Software Development)
+  document.querySelectorAll('[data-cat-tag]').forEach(el => {
+    const c = catMap[el.dataset.catTag];
+    if (c) el.innerHTML = c.tag;
+  });
+
+  // Category titles (big headings)
+  document.querySelectorAll('[data-cat-title]').forEach(el => {
+    const c = catMap[el.dataset.catTitle];
+    if (c) el.innerHTML = c.title;
   });
 })();

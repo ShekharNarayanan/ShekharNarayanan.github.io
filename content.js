@@ -19,7 +19,7 @@ const CONTENT = {
     label:     'Software Engineer · Utrecht, Netherlands',
     firstName: 'Shekhar',
     lastName:  'Narayanan',
-    tagline:   'Electronics engineer turned ML researcher. I build pipelines that go from raw data to actionable insights.',
+    tagline:   'Machine Learning Data Scientist. I build pipelines that go from raw data to actionable insights.',
     image:     'media/hero.jpg',
     ticker: [
       'scikit-learn', 'XGBoost', 'Random Forest', 'MLflow',
@@ -34,18 +34,14 @@ const CONTENT = {
     p1: `I have four years of experience working data heavy python projects,
     from dashboards to complete data pipelines. My background is in electronics engineering and neurotechnology,
     which means I spend a lot of time working with noisy, real-world physiological datasets.
-    I have experience with <strong>scikit-learn, XGBoost, MLflow, MNE-Python and NeuroKit2</strong> regularly and I am comfortable
+    I have experience with machine learning frameworks like <strong>scikit-learn</strong>, MLOps tools like <strong>MLFlow</strong> 
+    which I learnt deploying ML models like <strong>XGBoost, Logistic Regression, CCA and LDA</strong>. I am comfortable
     with data wrangling, feature extraction, model selection/evaluation and deployment.`,
     p2: `Currently a Software Engineer and Data Steward at Tilburg University, where I write research software
     and advise scientists in the School of Social and Behavioral Sciences. Before that I led a
     <strong>brain-computer interface project at the Donders Institute</strong>, resulting in a first-author
     publication at the Graz BCI Conference 2024. I am open to
     <strong>part-time collaborations</strong> in wearables, biosensors and health-tech.`,
-    stats: [
-      { num: '4+',              label: 'Years with Research Teams'  },
-      { num: 'EEG · ECG · EDA', label: 'Signal Modalities'          },
-      { num: '2',               label: 'Peer-reviewed Publications'  },
-    ],
   },
 
   /* ── FOOTER ── */
@@ -55,6 +51,34 @@ const CONTENT = {
     bottom:   'Shekhar Narayanan · 2026',
     location: 'Utrecht, Netherlands',
   },
+
+
+  /* ── CATEGORIES ──
+     These control the nav links, hero pills, section tags and headings.
+     Change a label here and it updates everywhere automatically.
+     navLabel   → nav bar link text and hero pill text
+     tag        → the small "// ..." label above each section heading
+     title      → the large section heading (HTML allowed for line breaks) */
+  categories: [
+    {
+      id:       'utility',
+      navLabel: 'Software Dev',
+      tag:      '// Software Development',
+      title:    'Software Development',
+    },
+    {
+      id:       'ml-ds',
+      navLabel: 'ML & Data Science',
+      tag:      '// Machine Learning &amp; Data Science',
+      title:    'ML &amp;<br />Data Science',
+    },
+    {
+      id:       'independent',
+      navLabel: 'Independent',
+      tag:      '// Independent',
+      title:    'Independent',
+    },
+  ],
 
   /* ── PROJECTS ── */
   projects: [
