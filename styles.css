@@ -139,7 +139,7 @@ nav {
   align-items: center;
   gap: 1.5rem;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-text {
@@ -163,7 +163,7 @@ nav {
     0 0 0 2px rgba(122,255,138,0.6),
     0 0 18px rgba(122,255,138,0.4),
     0 0 40px rgba(122,255,138,0.2);
-  filter: saturate(0.9) brightness(0.95);
+  filter: none;
 }
 body.light .hero-img {
   box-shadow:
@@ -176,7 +176,8 @@ canvas#neural-bg {
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.22;
+  opacity: 1;
+  z-index: 0;
   transition: opacity 0.3s;
 }
 
