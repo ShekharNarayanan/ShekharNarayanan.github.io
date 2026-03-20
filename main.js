@@ -150,3 +150,27 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
+
+
+/* ─────────────────────────────────────────
+   ML TICKER — JS-driven scroll
+   Guaranteed to work on any static host
+   ───────────────────────────────────────── */
+(function initTicker() {
+  const ticker = document.querySelector('.ml-ticker');
+  if (!ticker) return;
+
+  let pos = 0;
+  const speed = 0.6; // px per frame
+
+  function step() {
+    pos -= speed;
+    // Reset when first half has scrolled fully off-screen
+    const halfW = ticker.scrollWidth / 2;
+    if (Math.abs(pos) >= halfW) pos = 0;
+    ticker.style.transform = `translateX(${pos}px)`;
+    requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+})();

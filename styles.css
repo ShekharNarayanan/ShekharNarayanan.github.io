@@ -646,8 +646,7 @@ footer {
   display: flex;
   gap: 1.2rem;
   white-space: nowrap;
-  animation: ticker 28s linear infinite;
-  width: max-content;
+  will-change: transform;
 }
 
 .ml-ticker span {
@@ -665,10 +664,7 @@ footer {
   font-weight: 400;
 }
 
-@keyframes ticker {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
+
 /* ─────────────────────────────────────────
    RESPONSIVE
    ───────────────────────────────────────── */
