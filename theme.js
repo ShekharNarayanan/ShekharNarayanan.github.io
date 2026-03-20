@@ -78,12 +78,13 @@ const THEME = {
    --neural-glow                           halo brightness multiplier (0 = no glow, 0.5 = strong)
    --neural-speed                          max drift speed of nodes (0.1 = slow crawl, 0.5 = fast) */
 '--neural-r':        '34',
+'--neural-nodes':    '200',   // max number of nodes (lower = less RAM)
 '--neural-g':        '99',
 '--neural-b':        '220',
-'--neural-opacity':  '0.55',
+'--neural-opacity':  '0.8',
 '--neural-vignette': '0.72',
-'--neural-node-size':'7',
-'--neural-glow':     '0.7',
-'--neural-speed':    '0.9',
+'--neural-node-size':'20',
+'--neural-glow':     '0.4',
+'--neural-speed':    '2',
 
 };

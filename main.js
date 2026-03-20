@@ -42,7 +42,7 @@
   const BG = '#060a0d';
 
   function build(w, h) {
-    const count = Math.max(40, Math.floor((w * h) / 6000));
+    const count = gv('--neural-nodes') || 60;
     pts = Array.from({ length: count }, function() {
       var angle = Math.random() * Math.PI * 2;
       var spd   = 0.08 + Math.random() * 0.18;
