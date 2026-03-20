@@ -47,6 +47,35 @@
         <a class="pill" href="#ml-ds">ML &amp; Data Science</a>
         <a class="pill" href="#independent">Independent</a>
       </div>
+
+      <div class="ml-ticker-wrap">
+        <div class="ml-ticker">
+          <span>scikit-learn</span><span class="sep">·</span>
+          <span>XGBoost</span><span class="sep">·</span>
+          <span>Random Forest</span><span class="sep">·</span>
+          <span>MLflow</span><span class="sep">·</span>
+          <span>MNE-Python</span><span class="sep">·</span>
+          <span>CCA</span><span class="sep">·</span>
+          <span>LDA</span><span class="sep">·</span>
+          <span>NeuroKit2</span><span class="sep">·</span>
+          <span>WFDB</span><span class="sep">·</span>
+          <span>pandas</span><span class="sep">·</span>
+          <span>NumPy</span><span class="sep">·</span>
+          <span>SciPy</span><span class="sep">·</span>
+          <span>scikit-learn</span><span class="sep">·</span>
+          <span>XGBoost</span><span class="sep">·</span>
+          <span>Random Forest</span><span class="sep">·</span>
+          <span>MLflow</span><span class="sep">·</span>
+          <span>MNE-Python</span><span class="sep">·</span>
+          <span>CCA</span><span class="sep">·</span>
+          <span>LDA</span><span class="sep">·</span>
+          <span>NeuroKit2</span><span class="sep">·</span>
+          <span>WFDB</span><span class="sep">·</span>
+          <span>pandas</span><span class="sep">·</span>
+          <span>NumPy</span><span class="sep">·</span>
+          <span>SciPy</span><span class="sep">·</span>
+        </div>
+      </div>
     </div>
 
     <div class="hero-image-wrap">
@@ -65,15 +94,17 @@
   <div class="section-tag reveal">// About</div>
   <h2 class="reveal">Who I am</h2>
   <p class="reveal">
-    I'm a software engineer with a background in <strong>neuroscience and biosignal processing</strong>,
-    previously at the Donders Institute developing ALS-focused brain-computer interfaces.
-    Now I build data tools, ML systems and workflow automations — and I'm actively deepening
-    expertise in <strong>ECG arrhythmia detection</strong> as a domain project.
+    I'm a <strong>machine learning engineer</strong> with a background in neuroscience and biosignal
+    processing. I build end-to-end ML pipelines from scratch — <strong>raw data ingestion,
+    preprocessing, feature engineering, model training and deployment</strong> — across domains
+    ranging from EEG brain-computer interfaces to ECG arrhythmia classification.
+    My stack includes <strong>scikit-learn, XGBoost, Random Forest, MLflow, MNE-Python and NeuroKit2</strong>.
   </p>
   <p class="reveal">
-    I'm based in Utrecht and interested in <strong>part-time collaborations</strong> with companies
-    in the wearables and biosensors space — particularly where signal processing, physiological
-    data and machine learning intersect.
+    Previously at the Donders Institute developing ALS-focused BCIs using <strong>CCA and LDA</strong>
+    on live EEG streams. Now based in Utrecht, open to <strong>part-time collaborations</strong>
+    with companies in wearables, biosensors and health-tech — anywhere physiological time-series
+    data meets real-world ML deployment.
   </p>
   <div class="about-grid">
     <div class="about-stat reveal">
@@ -313,19 +344,21 @@
       <div class="status-badge live"><span class="status-dot"></span> Published · Graz BCI 2024</div>
       <h3 class="project-title">Covert<br />C-VEP BCI</h3>
       <p class="project-desc">
-        A <strong>gaze-independent brain-computer interface</strong> for people with late-stage ALS,
-        built on code-modulated visual evoked potentials. Participants covertly attend to flickering
-        stimuli without moving their eyes — intent decoded purely from
-        <strong>occipital EEG responses</strong>. Published at the 2024 Graz BCI Conference.
+        A <strong>gaze-independent brain-computer interface</strong> for people with late-stage ALS.
+        Built a full ML pipeline on top of raw EEG: preprocessing with <strong>MNE-Python</strong>,
+        feature extraction via <strong>CCA</strong> on SSVEP responses, and classification using
+        <strong>LDA and scikit-learn</strong>. Participants decoded intent purely from occipital brain
+        signals — no eye movement required. Published at the 2024 Graz BCI Conference.
       </p>
       <div class="project-tags">
         <span class="tag">Python</span>
+        <span class="tag">MNE-Python</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">CCA</span>
+        <span class="tag">LDA</span>
         <span class="tag">EEG</span>
-        <span class="tag">C-VEP</span>
         <span class="tag">BCI</span>
         <span class="tag">ALS</span>
-        <span class="tag">Eye Tracking</span>
-        <span class="tag">Jupyter</span>
       </div>
       <div class="project-links-row">
         <a class="project-link" href="https://arxiv.org/pdf/2404.00031" target="_blank">arXiv Paper ↗</a>
@@ -398,19 +431,21 @@
       <div class="status-badge live"><span class="status-dot"></span> Released · MIT License</div>
       <h3 class="project-title">EDA &amp; ECG<br />Preprocessing</h3>
       <p class="project-desc">
-        A reproducible preprocessing pipeline for <strong>electrodermal activity and ECG
-        biosignals</strong>, developed at Tilburg University (TSB-RST lab). Covers signal filtering,
-        artifact removal, SCR peak detection and HRV feature extraction — clean, analysis-ready
-        output from raw wearable sensor data.
+        A reproducible <strong>ML-ready preprocessing pipeline</strong> for electrodermal activity
+        and ECG biosignals, built at Tilburg University. Takes raw wearable sensor data and outputs
+        clean, analysis-ready features: bandpass filtering, artifact removal, <strong>SCR peak
+        detection via NeuroKit2</strong>, HRV feature extraction with <strong>SciPy</strong>,
+        and structured <strong>pandas</strong> DataFrames ready for downstream scikit-learn pipelines.
       </p>
       <div class="project-tags">
         <span class="tag">Python</span>
+        <span class="tag">NeuroKit2</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">pandas</span>
+        <span class="tag">SciPy</span>
         <span class="tag">EDA</span>
         <span class="tag">ECG</span>
         <span class="tag">HRV</span>
-        <span class="tag">Signal Processing</span>
-        <span class="tag">Wearables</span>
-        <span class="tag">Tilburg University</span>
       </div>
       <div class="project-links-row">
         <a class="project-link" href="https://gitlab.uvt.nl/tsb-rst/eda_ecg_preprocessing" target="_blank">GitLab ↗</a>
@@ -511,17 +546,21 @@
       <div class="status-badge"><span class="status-dot"></span> In Progress</div>
       <h3 class="project-title">ECG Arrhythmia<br />Detection</h3>
       <p class="project-desc">
-        A domain deep-dive into <strong>cardiac arrhythmia classification</strong> from ECG signals
-        using the MIT-BIH dataset. Covers signal preprocessing, QRS detection, feature extraction
-        and benchmarking ML architectures — bridging biosignal research with modern ML engineering.
+        End-to-end <strong>ML pipeline for cardiac arrhythmia classification</strong> on raw ECG
+        signals from the MIT-BIH database. Reads signals with <strong>WFDB</strong>, extracts
+        time-domain and frequency features, then trains and benchmarks <strong>XGBoost and
+        Random Forest</strong> classifiers with cross-validation using <strong>scikit-learn</strong>.
+        Experiment tracking and model versioning handled by <strong>MLflow</strong> — deployable
+        from a single pipeline call.
       </p>
       <div class="project-tags">
         <span class="tag">Python</span>
+        <span class="tag">XGBoost</span>
+        <span class="tag">Random Forest</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">MLflow</span>
+        <span class="tag">WFDB</span>
         <span class="tag">MIT-BIH</span>
-        <span class="tag">Signal Processing</span>
-        <span class="tag">PyTorch</span>
-        <span class="tag">Wearables</span>
-        <span class="tag">Healthcare ML</span>
       </div>
       <div class="project-links-row">
         <a class="project-link" href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>
@@ -632,17 +671,21 @@
       <div class="status-badge"><span class="status-dot"></span> In Progress</div>
       <h3 class="project-title">ECG Arrhythmia<br />Detection</h3>
       <p class="project-desc">
-        A domain deep-dive into <strong>cardiac arrhythmia classification</strong> from ECG signals
-        using the MIT-BIH dataset. Covers signal preprocessing, QRS detection, feature extraction
-        and benchmarking ML architectures — bridging biosignal research with modern ML engineering.
+        End-to-end <strong>ML pipeline for cardiac arrhythmia classification</strong> on raw ECG
+        signals from the MIT-BIH database. Reads signals with <strong>WFDB</strong>, extracts
+        time-domain and frequency features, then trains and benchmarks <strong>XGBoost and
+        Random Forest</strong> classifiers with cross-validation using <strong>scikit-learn</strong>.
+        Experiment tracking and model versioning handled by <strong>MLflow</strong> — deployable
+        from a single pipeline call.
       </p>
       <div class="project-tags">
         <span class="tag">Python</span>
+        <span class="tag">XGBoost</span>
+        <span class="tag">Random Forest</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">MLflow</span>
+        <span class="tag">WFDB</span>
         <span class="tag">MIT-BIH</span>
-        <span class="tag">Signal Processing</span>
-        <span class="tag">PyTorch</span>
-        <span class="tag">Wearables</span>
-        <span class="tag">Healthcare ML</span>
       </div>
       <div class="project-links-row">
         <a class="project-link" href="https://github.com/ShekharNarayanan" target="_blank">GitHub ↗</a>

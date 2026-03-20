@@ -629,6 +629,46 @@ footer {
   transform: translateY(0);
 }
 
+
+/* ─────────────────────────────────────────
+   ML STACK TICKER
+   ───────────────────────────────────────── */
+.ml-ticker-wrap {
+  overflow: hidden;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.ml-ticker {
+  display: flex;
+  gap: 1.2rem;
+  white-space: nowrap;
+  animation: ticker 28s linear infinite;
+  width: max-content;
+}
+
+.ml-ticker span {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--green);
+  opacity: 0.75;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ml-ticker .sep {
+  opacity: 0.3;
+  font-weight: 400;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 /* ─────────────────────────────────────────
    RESPONSIVE
    ───────────────────────────────────────── */
