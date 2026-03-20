@@ -278,3 +278,21 @@
   });
 
 })();
+
+/* ─────────────────────────────────────────
+   VISUAL INJECTION
+   Reads VISUALS from visuals.js and injects
+   SVG animations into data-project-viz hooks
+   ───────────────────────────────────────── */
+(function injectVisuals() {
+  if (typeof VISUALS === 'undefined') {
+    console.warn('visuals.js not loaded');
+    return;
+  }
+  document.querySelectorAll('[data-project-viz]').forEach(el => {
+    const id  = el.dataset.projectViz;
+    const svg = VISUALS[id];
+    if (svg) el.innerHTML = svg;
+    else console.warn(`No visual found for: ${id}`);
+  });
+})();
