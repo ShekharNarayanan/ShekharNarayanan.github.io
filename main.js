@@ -25,20 +25,22 @@
 
 
 /* ─────────────────────────────────────────
-   NEURAL NET BACKGROUND
+   NEURAL NET BACKGROUND — DISABLED
+
    Uses window dimensions (not offsetWidth)
    so it works regardless of canvas CSS sizing
    ───────────────────────────────────────── */
 (function initNeuralBg() {
+  return; // disabled
   const canvas = document.getElementById('neural-bg');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let W, H, graph, t = 0;
 
-  const GREEN_RGB = [122, 255, 138];
+  const GREEN_RGB = [62, 207, 255];
   const BG_DARK   = '#060a0d';
   const BG_LIGHT  = '#f0f4f1';
-  const GN_LIGHT  = [26, 122, 46];
+  const GN_LIGHT  = [0, 120, 180];
 
   function rgb(isLight) { return isLight ? GN_LIGHT : GREEN_RGB; }
 
@@ -94,7 +96,7 @@
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
-      ctx.strokeStyle = `rgba(${C.join(',')},${0.55 + bright * 0.45})`;
+      ctx.strokeStyle = `rgba(${C.join(',')},${0.33 + bright * 0.27})`;
       ctx.lineWidth   = 1.5 + bright * 2.5;
       ctx.stroke();
     });
@@ -106,18 +108,18 @@
       const radius = node.r + pulse * 4;
 
       if (pulse > 0.2) {
-        const grd = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, radius * 8);
-        grd.addColorStop(0, `rgba(${C.join(',')},${0.55 * pulse})`);
+        const grd = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, radius * 5);
+        grd.addColorStop(0, `rgba(${C.join(',')},${0.33 * pulse})`);
         grd.addColorStop(1, `rgba(${C.join(',')},0)`);
         ctx.beginPath();
-        ctx.arc(node.x, node.y, radius * 8, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, radius * 5, 0, Math.PI * 2);
         ctx.fillStyle = grd;
         ctx.fill();
       }
 
       ctx.beginPath();
       ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${C.join(',')},${0.8 + pulse * 0.2})`;
+      ctx.fillStyle = `rgba(${C.join(',')},${0.48 + pulse * 0.12})`;
       ctx.fill();
     });
 
